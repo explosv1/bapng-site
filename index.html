@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barrington Area Professional Networking</title>
+  <style>
+    /* ====== Base styles ====== */
+    :root {
+      --primary: #164b70;
+      --primary-light: #e4f0f9;
+      --accent: #e3a13c;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ====== Header & Nav ====== */
+    .site-header {
+      background: linear-gradient(135deg, #0b3754, #164b70);
+      color: var(--white);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background-color: rgba(11, 55, 84, 0.96);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-block h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .logo-block .tagline {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* ====== Hero Section ====== */
+    .hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p.lead {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #1f2933;
+      box-shadow: var(--shadow-soft);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+      background-color: #f0b454;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background-color: transparent;
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(15, 23, 42, 0.2);
+    }
+
+    .hero-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card dl {
+      font-size: 0.9rem;
+    }
+
+    .hero-card dt {
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .hero-card dd {
+      margin-left: 0;
+      color: var(--muted);
+    }
+
+    /* ====== Sections ====== */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background-color: var(--white);
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--bg);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    section p {
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .subheading {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* ====== Contact block ====== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+    }
+
+    .contact-list p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      color: var(--muted);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      padding: 1.5rem 0 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 768px) {
+      .hero-inner,
+      .two-column,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      .hero-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-highlights {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Header / Navigation ====== -->
+  <header class="site-header">
+   <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
+  
+  <!-- LEFT SIDE: Logo + Text -->
+  <div class="logo-block" style="display: flex; align-items: center; gap: 3rem;">
+    <img src="logo.png" alt="BAPNG Logo" style="height: 120px; width: auto;">
+    <div>
+      <h1 style="margin: 0; font-size: 1.6rem;">Barrington Area Professional Networking Group</h1>
+      <p class="tagline">Connect | Learn | Mentor | Coach</p>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE: Vertical Navigation -->
+  <nav>
+    <ul style="display: flex; flex-direction: column; gap: 0.4rem; list-style: none; text-align: right; margin: 0; padding: 0;">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#join">Join Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <h2>Professional networking rooted in the Barrington and surrounding communities.</h2>
+        <p class="lead">
+          Barrington Area Professional Networking Group (BAPNG) brings together professionals, business owners,
+          and leaders who live or work in the greater Barrington area to connect, learn, and support one another in an inclusive environment.
+        </p>
+
+        <div class="hero-highlights">
+          <span class="pill">Local Connections</span>
+          <span class="pill">Meaningful Conversations</span>
+          <span class="pill">Shared Opportunities</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#events" class="btn btn-primary">See Upcoming Meetings</a>
+          <a href="#join" class="btn btn-outline">How to Join</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Who we are</dt>
+          <dd>Professionals, small business owners, job seekers, and community leaders in and around Barrington.</dd>
+
+          <dt>Where we meet</dt>
+          <dd><!-- Edit this text with your real location -->
+            Typically in the Barrington, IL area. Exact locations are listed with each event.
+          </dd>
+
+          <dt>New here?</dt>
+          <dd>Guests are always welcome. Visit an upcoming meeting to see if we’re a good fit.</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ====== About ====== -->
+  <section id="about">
+    <div class="container two-column">
+      <div>
+        <p class="subheading">About</p>
+        <h2>About Barrington Area Professional Networking Group</h2>
+        <p>
+          Barrington Area Professional Networking Group (BAPNG) was created to bring together professionals at all levels from across
+          industries who share a common goal: building a stronger, more connected Barrington community.
+        </p>
+        <p>
+          Our members include small business owners, corporate leaders, entrepreneurs, job seekers, and career changers. It doesn't matter if you are currently working, actively looking, growing a business, expanding your network, looking for your next opportunity, or just "trying to figure things out"; you'll find a welcoming, supportive group here.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What we value</h3>
+        <ul>
+          <li><strong>Genuine connections</strong> – We prioritize real relationships over quick transactions.</li>
+          <li><strong>Collaboration</strong> – We share ideas, referrals, and resources to help each other succeed.</li>
+          <li><strong>Community impact</strong> – Strong, inclusive, local connections create a stronger local community.</li>
+        </ul>
+        <p class="muted">
+          BAPNG is designed to be approachable, friendly, and action-oriented — perfect for both seasoned networkers
+          and those who are just getting started.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Events ====== -->
+  <section id="events">
+    <div class="container">
+      <p class="subheading">Events</p>
+      <h2>Meetings & Events</h2>
+      <p>
+        BAPNG hosts regular networking meetups in the Barrington area, along with occasional special events such as
+        guest speakers, panels, and collaborations with local organizations.
+      </p>
+
+      <div class="two-column" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h3>Recurring meetings</h3>
+          <!-- Update this section with your real details -->
+          <ul>
+            <li><strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)</li>
+            <li><strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues (details included in each event notice)</li>
+            <li><strong>Format:</strong> Open networking, member introductions, and topic-based discussion.</li>
+          </ul>
+          <p class="muted">
+            New visitors are always welcome. We encourage you to arrive a few minutes early to settle in and say hello.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Upcoming dates</h3>
+          <!-- You can convert this into a real list of dates or a link to Meetup/Eventbrite -->
+          <ul>
+            <li><strong>Next meetup:</strong> December 12, 2025 @ Barrington Library (further details provided in official Facebook and LinkedIn communications.</li>
+            <li><strong>Special event:</strong> [Add topic or speaker here]</li>
+          </ul>
+          <p class="muted">
+            Want to stay up to date? Join our email list or follow us on social media to receive event reminders.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Join Us ====== -->
+  <section id="join">
+    <div class="container two-column">
+      <div>
+        <p class="subheading">Membership</p>
+        <h2>Interested in joining BAPNG?</h2>
+        <p>
+          We’re always excited to welcome new members who are:
+        </p>
+        <ul>
+          <li>Professionals of all varieties who live or work in the Barrington and surrounding area</li>
+          <li>Small business owners and entrepreneurs</li>
+          <li>People in career transition or exploring new opportunities</li>
+          <li>Community leaders and connectors</li>
+        </ul>
+        <p>
+          If you’re looking for a grounded, inclusive-focused networking group, BAPNG might be a great fit.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>How to get started</h3>
+        <ol>
+          <li>Join the BAPNG Facebook Group</li>
+          <li>Attend a meeting.</li>
+          <li>Introduce yourself and share what you do or what you’re looking for.</li>
+          <li>Keep coming back for more!</li>
+        </ol>
+        <p class="muted">
+          Respond to the Facebook invite ahead of time so we know to look for you.
+        </p>
+        <p>
+          <strong>Questions?</strong> <a href="#contact">Get in touch with us.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Contact ====== -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="subheading">Contact</p>
+        <h2>Get in touch</h2>
+        <p>
+          Have questions about our group or meetings? We’d love to hear from you.
+        </p>
+        <div class="contact-list">
+          <p>
+            <span class="contact-chip">
+              📧 Email
+            </span>
+          </p>
+          <p>
+            <!-- Replace this with your real group email -->
+            <a href="mailto:barringtonnetworking@proton.me">
+              barringtonnetworking@proton.me
+            </a>
+          </p>
+          <p class="contact-note">
+            We typically respond within a few days. Let us know if you’d like to join an upcoming meeting.
+          </p>
+        </div>
+
+        <div class="contact-list" style="margin-top: 1rem;">
+          <p>
+            <span class="contact-chip">
+              🔗 Social
+            </span>
+          </p>
+          <p class="muted">
+            https://www.facebook.com/groups/1800881530842613 
+          </p>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Quick details</h3>
+        <ul>
+          <li><strong>Location:</strong> Barrington, Illinois & surrounding areas</li>
+          <li><strong>Focus:</strong> Local professional networking & community building</li>
+          <li><strong>Guests:</strong> Always welcome to visit before joining</li>
+        </ul>
+        <p class="muted">
+          This group is built for real conversations and relationships. Come as you are — we’re glad you’re here.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Barrington Area Professional Networking Group. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
