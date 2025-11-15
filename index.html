@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barrington Area Professional Networking</title>
+  <title>Barrington Area Professional Networking Group</title>
+
   <style>
-    /* ====== Base styles ====== */
+    /* ====== Base design tokens ====== */
     :root {
       --primary: #164b70;
       --primary-light: #e4f0f9;
@@ -32,7 +33,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     a {
@@ -55,47 +56,117 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(12px);
-      background-color: rgba(11, 55, 84, 0.96);
     }
 
     .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;              /* space between logo block and nav */
-  flex-wrap: nowrap;      /* keep logo + nav on the same row */
-}
-        .logo-block h1 {
-      font-size: 1.4rem;
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: nowrap;
     }
 
-    .logo-block .tagline {
-      font-size: 0.85rem;
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .logo-block img {
+      height: 160px;
+      width: auto;
+    }
+
+    .header-text {
+      text-align: center;
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 1.85rem;
+      line-height: 1.3;
+    }
+
+    .tagline {
+      margin: 1rem 0 0;
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      font-weight: 300;
       opacity: 0.9;
+      line-height: 1.4;
+      text-align: center;
     }
 
     .main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;   /* stack vertically */
-  gap: 0.5rem;              /* space between items */
-  text-align: right;        /* align text to the right edge */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: right;
     }
 
-    nav a {
+    .main-nav a {
       font-size: 0.9rem;
       padding: 0.45rem 0.8rem;
       border-radius: 999px;
       transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       background-color: var(--primary-light);
       color: var(--primary);
       transform: translateY(-1px);
+    }
+
+    /* ====== Buttons ====== */
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #1f2933;
+      font-weight: 600;
+      border-color: var(--accent);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background-color: #f0b454;
+      border-color: #f0b454;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background-color: transparent;
+      font-weight: 600;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent);
+      color: #1f2933;
     }
 
     /* ====== Hero Section ====== */
@@ -103,121 +174,38 @@
       padding: 3rem 0 2.5rem;
     }
 
- .hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 2rem;
-  align-items: flex-start;
-}
-    .hero-card {
-  margin-top: -1rem; /* Lift card upward ~16px */
-}
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .hero .subheading {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
 
     .hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-.hero .subheading {
-  margin-bottom: 0.25rem;
-}
-
-.hero .lead {
-  margin-bottom: 0.9rem;
-}
-
-.hero-highlights {
-  justify-content: flex-start;
-}
-
-.hero-actions {
-  margin-top: 0.5rem;
-}
-
-    .hero p.lead {
+    .hero .lead {
       font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.9rem;
     }
 
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .pill {
-      font-size: 0.8rem;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      background-color: var(--primary-light);
-      color: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-   .hero-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  justify-content: center;
-     .hero-actions a {
-  min-width: 180px;
-  text-align: center;
-}}
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.2s ease;
-    }
-
-    .btn-primary {
-  background-color: var(--accent);
-  color: #1f2933;
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 0.7rem 1.4rem;
-  border: 2px solid var(--accent);
-  box-shadow: var(--shadow-soft);
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #f0b454;
-  border-color: #f0b454;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
-}
-
-   .btn-outline {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background-color: transparent;
-  font-weight: 600;
-}
-
-.btn-outline:hover {
-  background-color: var(--accent);
-  color: #1f2933;
-}
     .hero-card {
       background-color: var(--white);
       border-radius: var(--radius);
       padding: 1.4rem;
       box-shadow: var(--shadow-soft);
+      margin-top: -1rem; /* lift card slightly */
     }
 
     .hero-card h3 {
@@ -239,158 +227,38 @@
       color: var(--muted);
     }
 
-   /* ====== Sections (general) ====== */
-section {
-  padding: 2.5rem 0;
-}
+    .hero-bottom {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
 
-section:nth-of-type(odd) {
-  background-color: var(--white);
-}
+    .subtagline {
+      margin: 1.5rem 0 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.16rem;
+      color: var(--muted);
+      text-align: center;
+      text-transform: uppercase;
+    }
 
-section:nth-of-type(even) {
-  background-color: var(--bg);
-}
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
 
-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
+    .hero-actions a {
+      min-width: 180px;
+      text-align: center;
+    }
 
-section p {
-  margin-bottom: 0.75rem;
-  color: var(--muted);
-}
-
-.two-column {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.25rem;
-  align-items: flex-start;
-}
-
-/* base card (used in multiple sections) */
-.card {
-  background-color: var(--white);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.subheading {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-bottom: 0.25rem;
-}
-
-ul {
-  padding-left: 1.1rem;
-  margin-bottom: 0.75rem;
-}
-
-li {
-  margin-bottom: 0.35rem;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-/* ====== ABOUT section ====== */
-
-#about {
-  padding-top: 3rem;
-}
-
-/* About subheading ("ABOUT") */
-#about .subheading {
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
-
-/* About main headline */
-#about h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--text);
-  margin-bottom: 1.25rem;
-}
-
-/* About body text */
-#about p {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  margin-bottom: 1.1rem;
-  color: var(--muted);
-}
-
-/* Premium About card */
-#about .card {
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
-  border-radius: 14px;
-  padding: 1.5rem 1.75rem;
-  margin-top: 0.75rem;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.05),
-    0 2px 4px rgba(0, 0, 0, 0.03);
-
-  border-left: 3px solid var(--primary); /* navy accent */
-}
-
-/* Card heading */
-#about .card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-/* Card list + paragraph text */
-#about .card li,
-#about .card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text);
-}
-
-/* Strong labels in card list */
-#about .card strong {
-  color: var(--primary);
-  font-weight: 700;
-}
-
-/* Extra spacing between bullets */
-#about .card li {
-  margin-bottom: 0.75rem;
-}
-    /* Premium card styling for the About section */
-#about .card {
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8f9fb 100%
-  ); /* soft top-to-bottom gradient */
-
-  border-radius: 14px; /* slightly more rounded */
-  padding: 1.5rem 1.75rem;
-
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.05),   /* soft outer lift */
-    0 2px 4px rgba(0, 0, 0, 0.03);    /* tiny crisp grounding */
-
-  border-left: 4px solid var(--accent); /* keep your navy accent */
-}
-}
-#about p {
-  margin-bottom: 1rem;
-}
+    /* ====== Sections (general) ====== */
+    section {
+      padding: 2.5rem 0;
+    }
 
     section:nth-of-type(odd) {
       background-color: var(--white);
@@ -445,6 +313,89 @@ li {
       color: var(--muted);
     }
 
+    /* ====== ABOUT section ====== */
+
+    #about {
+      padding-top: 3rem;
+    }
+
+    #about .subheading {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    #about h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    #about p {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 1.1rem;
+      color: var(--muted);
+    }
+
+    /* Premium About card */
+    #about .card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 0.75rem;
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.05),
+        0 2px 4px rgba(0, 0, 0, 0.03);
+
+      border-left: 4px solid var(--accent);
+    }
+
+    #about .card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    #about .card li,
+    #about .card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    #about .card strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    #about .card li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* ====== Events section ====== */
+
+    #events .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ====== Join section ====== */
+
+    #join ol {
+      padding-left: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    #join ol li {
+      margin-bottom: 0.5rem;
+    }
+
     /* ====== Contact block ====== */
     .contact-grid {
       display: grid;
@@ -480,316 +431,241 @@ li {
       font-size: 0.85rem;
       color: var(--muted);
     }
-/* Base tagline style (desktop) */
-.tagline {
-  margin: 1rem 0 0;
-  font-size: 1rem;
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  opacity: 0.9;
-  line-height: 1.4;
-  text-align: center;
-}
-.subtagline {
-  margin: 1.5rem 0 2rem; /* 24px top, 32px bottom */
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.16rem;
-  color: var(--muted);
-  text-align: center;
-  text-transform: uppercase;
-}}
-/* Base H1 (desktop) */
-.site-title {
-  text-align: center;
-  margin: 0;
-  font-size: 1.85rem;
-  line-height: 1.3;
-}
 
-/* Optional, in case you ever use .header-text h1 without .site-title */
-.header-text h1 {
-  margin: 0;
-  font-size: 1.85rem;
-  line-height: 1.3;
-}
-.hero-bottom {
-  margin-top: 1.5rem;
-  text-align: center;
-}
+    /* ====== Responsive ====== */
+    @media (max-width: 768px) {
+      .hero-inner,
+      .two-column,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
 
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem; /* 16px space between buttons */
-  flex-wrap: wrap;
-  margin-top: 0.5rem; /* 8px micro-gap for breathing room */
-}
-  .hero-actions a {
-  min-width: 180px; /* Ensures symmetrical button row */
-  text-align: center;
-}
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
+      .hero {
+        padding-top: 2rem;
+      }
 
-  .hero-inner,
-  .two-column,
-  .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
 
-  .hero {
-    padding-top: 2rem;
-  }
+      .hero-inner {
+        gap: 1.75rem;
+      }
 
-  .hero h2 {
-    font-size: 1.6rem;
-  }
+      .hero-card {
+        margin-top: 0.5rem;
+      }
 
-  .hero-inner {
-    gap: 1.75rem;
-  }
+      .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
 
-  .hero-highlights {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: center;
-    text-align: center;
-  }
+      .logo-block {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
 
-  .hero-actions {
-    justify-content: center;
-  }
+      .logo-block img {
+        height: 120px;
+      }
 
-  .hero-card {
-    margin-top: 0.5rem;
-  }
+      .header-text {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+      }
 
-  /* Header layout on mobile/tablet */
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
+      .site-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
 
-  .logo-block {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
+      .tagline {
+        font-size: 0.75rem;
+        letter-spacing: 0.14rem;
+      }
 
-  .logo-block img {
-    height: 120px !important;
-  }
+      .main-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        text-align: center;
+      }
+    }
 
-  .header-text {
-    max-width: 100%;
-    margin: 0;
-    text-align: center;
-  }
+    @media (max-width: 480px) {
+      .subtagline {
+        margin: 1rem 0 1.5rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.08rem;
+      }
 
-  .site-title {
-    font-size: 1.4rem;
-    line-height: 1.3;
-  }
+      .hero-actions a {
+        min-width: 140px;
+      }
 
-  .tagline {
-    font-size: 0.75rem;
-    letter-spacing: 0.14rem;
-  }
+      .hero-actions {
+        gap: 0.75rem;
+      }
 
-  .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    text-align: center;
-  }
-}
+      .site-title {
+        font-size: 1.2rem;
+        line-height: 1.25;
+      }
 
-@media (max-width: 480px) {
-  .subtagline {
-    margin: 1rem 0 1.5rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.08rem;
-  }
-
-  .hero-actions a {
-    min-width: 140px;
-  }
-
-  .hero-actions {
-    gap: 0.75rem;
-  }
-
-  .site-title {
-    font-size: 1.2rem;
-    line-height: 1.25;
-  }
-
-  .tagline {
-    font-size: 0.55rem;
-    letter-spacing: 0.06rem;
-    text-align: center;
-  }
-}
+      .tagline {
+        font-size: 0.55rem;
+        letter-spacing: 0.06rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- ====== Header / Navigation ====== -->
   <header class="site-header">
-  <div class="container header-inner">
+    <div class="container header-inner">
 
-    <div class="logo-block" style="display: flex; align-items: center; gap: 4rem;">
-      <img src="logo.png" alt="BAPNG Logo" style="height: 160px; width: auto;">
-
-      <div class="header-text" style="
-        text-align: center;
-        width: 100%;
-        max-width: 750px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      ">
-        <h1 class="site-title">
-  Barrington Area Professional<br>
-  Networking Group
-</h1>
-        <p class="tagline">
-          CONNECT • LEARN • MENTOR • COACH
-        </p>
+      <div class="logo-block">
+        <img src="logo.png" alt="BAPNG Logo" />
+        <div class="header-text">
+          <h1 class="site-title">
+            Barrington Area Professional<br>
+            Networking Group
+          </h1>
+          <p class="tagline">
+            CONNECT • LEARN • MENTOR • COACH
+          </p>
+        </div>
       </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#join">Join Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
     </div>
-
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#join">Join Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
+  </header>
 
   <!-- ====== Hero ====== -->
- <section class="hero" id="home">
-  <div class="container">
+  <section class="hero" id="home">
+    <div class="container">
 
-    <div class="hero-inner">
-      <div>
-        <p class="subheading">Welcome</p>
+      <div class="hero-inner">
+        <div>
+          <p class="subheading">Welcome</p>
 
-        <h2>Professional networking rooted in Barrington and the surrounding communities.</h2>
+          <h2>Professional networking rooted in Barrington and the surrounding communities.</h2>
 
-        <p class="lead">
-          Barrington Area Professional Networking Group (BAPNG) is a volunteer-led community of professionals,
-          small business owners, job seekers, and community leaders who live or work in the greater Barrington area.
-          We meet regularly to share ideas, make connections, and support one another.
-        </p>
+          <p class="lead">
+            Barrington Area Professional Networking Group (BAPNG) is a volunteer-led community of professionals,
+            small business owners, job seekers, and community leaders who live or work in the greater Barrington area.
+            We meet regularly to share ideas, make connections, and support one another.
+          </p>
 
-        <p class="lead">
-          Whether you're growing a business, exploring a new role, or simply looking to plug into the local community,
-          you'll find a friendly, low-pressure space to learn, network, and give back.
-        </p>
+          <p class="lead">
+            Whether you're growing a business, exploring a new role, or simply looking to plug into the local community,
+            you'll find a friendly, low-pressure space to learn, network, and give back.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>At a glance</h3>
+          <dl>
+            <dt>Who it's for</dt>
+            <dd>
+              Professionals, small business owners, job seekers, and community builders
+              who live or work in the greater Barrington area.
+            </dd>
+
+            <dt>How we meet</dt>
+            <dd>
+              In-person meetups in Barrington, IL and nearby communities. Exact dates and locations
+              are listed in the Events section and shared on Facebook/LinkedIn.
+            </dd>
+
+            <dt>What to expect</dt>
+            <dd>
+              Warm introductions, open networking, and light, topic-based conversations.
+              Guests are always welcome to visit before joining.
+            </dd>
+          </dl>
+        </aside>
       </div>
 
-      <aside class="hero-card">
-        <h3>At a glance</h3>
-        <dl>
-          <dt>Who it's for</dt>
-          <dd>
-            Professionals, small business owners, job seekers, and community builders
-            who live or work in the greater Barrington area.
-          </dd>
+      <div class="hero-bottom">
+        <p class="subtagline">
+          LOCAL CONNECTIONS • MEANINGFUL CONVERSATIONS • SHARED OPPORTUNITIES
+        </p>
 
-          <dt>How we meet</dt>
-          <dd>
-            In-person meetups in Barrington, IL and nearby communities. Exact dates and locations
-            are listed in the Events section and shared on Facebook/LinkedIn.
-          </dd>
-
-          <dt>What to expect</dt>
-          <dd>
-            Warm introductions, open networking, and light, topic-based conversations.
-            Guests are always welcome to visit before joining.
-          </dd>
-        </dl>
-      </aside>
-    </div>
-
-    <!-- Full-width tagline + buttons -->
-    <div class="hero-bottom">
-      <p class="subtagline">
-        LOCAL CONNECTIONS • MEANINGFUL CONVERSATIONS • SHARED OPPORTUNITIES
-      </p>
-
-      <div class="hero-actions">
-        <a href="#events" class="btn btn-primary">See upcoming meetings</a>
-        <a href="#join" class="btn btn-outline">How to join</a>
+        <div class="hero-actions">
+          <a href="#events" class="btn btn-primary">See upcoming meetings</a>
+          <a href="#join" class="btn btn-outline">How to join</a>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
+
   <!-- ====== About ====== -->
   <section id="about">
-  <div class="container two-column">
-    <div>
-      <p class="subheading">About</p>
-      <h2>About Barrington Area Professional Networking Group</h2>
+    <div class="container two-column">
+      <div>
+        <p class="subheading">About</p>
+        <h2>About Barrington Area Professional Networking Group</h2>
 
-      <p>
-        Barrington Area Professional Networking Group (BAPNG) was created to bring together professionals
-        at all levels who share a common goal: building a stronger, more connected Barrington community.
-      </p>
+        <p>
+          Barrington Area Professional Networking Group (BAPNG) was created to bring together professionals
+          at all levels who share a common goal: building a stronger, more connected Barrington community.
+        </p>
 
-      <p>
-        Our members include small business owners, corporate leaders, entrepreneurs, job seekers, and career changers.
-        It doesn’t matter if you’re currently working, actively looking, growing a business, exploring what’s next,
-        or just “trying to figure things out”. You’ll find a welcoming, supportive group here.
-      </p>
+        <p>
+          Our members include small business owners, corporate leaders, entrepreneurs, job seekers, and career changers.
+          It doesn’t matter if you’re currently working, actively looking, growing a business, exploring what’s next,
+          or just “trying to figure things out”. You’ll find a welcoming, supportive group here.
+        </p>
 
-      <p>
-        BAPNG is intentionally low-pressure and people-first. We focus on listening, learning, and making introductions
-        that lead to real connections, not just business card swaps.
-      </p>
+        <p>
+          BAPNG is intentionally low-pressure and people-first. We focus on listening, learning, and making introductions
+          that lead to real connections, not just business card swaps.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What we value</h3>
+        <ul>
+          <li>
+            <strong>Genuine connections</strong> – We prioritize real relationships over quick transactions.
+          </li>
+          <li>
+            <strong>Collaboration</strong> – We share ideas, referrals, and resources so everyone can succeed together.
+          </li>
+          <li>
+            <strong>Community impact</strong> – Strong, inclusive local connections make for a stronger Barrington area.
+          </li>
+        </ul>
+        <p class="muted">
+          BAPNG is designed to be approachable, friendly, and action-oriented. A great fit for both seasoned networkers
+          and those who are just getting started.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>What we value</h3>
-      <ul>
-        <li>
-          <strong>Genuine connections</strong> – We prioritize real relationships over quick transactions.
-        </li>
-        <li>
-          <strong>Collaboration</strong> – We share ideas, referrals, and resources so everyone can succeed together.
-        </li>
-        <li>
-          <strong>Community impact</strong> – Strong, inclusive local connections make for a stronger Barrington area.
-        </li>
-      </ul>
-      <p class="muted">
-        BAPNG is designed to be approachable, friendly, and action-oriented. A great fit for both seasoned networkers
-        and those who are just getting started.
-      </p>
-    </div>
-  </div>
-</section>
- 
   <!-- ====== Events ====== -->
   <section id="events">
     <div class="container">
       <p class="subheading">Events</p>
-      <h2>Meetings & Events</h2>
+      <h2>Meetings &amp; Events</h2>
       <p>
         BAPNG hosts regular networking meetups in the Barrington area, along with occasional special events such as
         guest speakers, panels, and collaborations with local organizations.
@@ -798,11 +674,10 @@ li {
       <div class="two-column" style="margin-top: 1.5rem;">
         <div class="card">
           <h3>Recurring meetings</h3>
-          <!-- Update this section with your real details -->
           <ul>
             <li><strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)</li>
-            <li><strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues (details included in each event notice)</li>
-            <li><strong>Format:</strong> Open networking, member introductions, and topic-based discussion.</li>
+            <li><strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues</li>
+            <li><strong>Format:</strong> Open networking, introductions, and discussion.</li>
           </ul>
           <p class="muted">
             New visitors are always welcome. We encourage you to arrive a few minutes early to settle in and say hello.
@@ -811,9 +686,8 @@ li {
 
         <div class="card">
           <h3>Upcoming dates</h3>
-          <!-- You can convert this into a real list of dates or a link to Meetup/Eventbrite -->
           <ul>
-            <li><strong>Next meetup:</strong> December 12, 2025 @ Barrington Library (further details provided in official Facebook and LinkedIn communications.</li>
+            <li><strong>Next meetup:</strong> December 12, 2025 @ Barrington Library</li>
             <li><strong>Special event:</strong> [Add topic or speaker here]</li>
           </ul>
           <p class="muted">
@@ -834,7 +708,7 @@ li {
           We’re always excited to welcome new members who are:
         </p>
         <ul>
-          <li>Professionals of all varieties who live or work in the Barrington and surrounding area</li>
+          <li>Professionals who live or work in the Barrington and surrounding area</li>
           <li>Small business owners and entrepreneurs</li>
           <li>People in career transition or exploring new opportunities</li>
           <li>Community leaders and connectors</li>
@@ -847,7 +721,7 @@ li {
       <div class="card">
         <h3>How to get started</h3>
         <ol>
-          <li>Join the BAPNG Facebook Group</li>
+          <li>Join the BAPNG Facebook Group.</li>
           <li>Attend a meeting.</li>
           <li>Introduce yourself and share what you do or what you’re looking for.</li>
           <li>Keep coming back for more!</li>
@@ -878,7 +752,6 @@ li {
             </span>
           </p>
           <p>
-            <!-- Replace this with your real group email -->
             <a href="mailto:barringtonnetworking@proton.me">
               barringtonnetworking@proton.me
             </a>
@@ -895,7 +768,7 @@ li {
             </span>
           </p>
           <p class="muted">
-            https://www.facebook.com/groups/1800881530842613 
+            https://www.facebook.com/groups/1800881530842613
           </p>
         </div>
       </div>
@@ -903,8 +776,8 @@ li {
       <aside class="card">
         <h3>Quick details</h3>
         <ul>
-          <li><strong>Location:</strong> Barrington, Illinois & surrounding areas</li>
-          <li><strong>Focus:</strong> Local professional networking & community building</li>
+          <li><strong>Location:</strong> Barrington, Illinois &amp; surrounding areas</li>
+          <li><strong>Focus:</strong> Local professional networking &amp; community building</li>
           <li><strong>Guests:</strong> Always welcome to visit before joining</li>
         </ul>
         <p class="muted">
