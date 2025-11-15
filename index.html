@@ -419,55 +419,21 @@
 #events h3 svg {
   width: 22px;
   height: 22px;
-  padding: 6px; /* bubble spacing */
+  padding: 6px;                       /* bubble spacing */
   background: rgba(22, 75, 112, 0.12); /* soft navy bubble */
   border-radius: 50%;
-  fill: #ffffff; /* icon stays white */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  fill: #ffffff;                      /* icon stays white */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
-    #events h3 svg,
-#events h3:hover svg {
-  fill: #ffffff;
-  color: #ffffff;
-}
-    /* Headings with SVG icons */
-#events .icon-heading {
+
+/* Headings with SVG icons */
+#events h3.icon-heading {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;          /* space between icon + text */
   font-size: 1.15rem;
   margin-bottom: 1rem;
-}
-
-/* Base icon style */
-#events .icon-heading .icon {
-  width: 22px;
-  height: 22px;
-  stroke-width: 2; /* makes the lines bolder */
-}
-
-#events .icon-heading {
-  gap: 0.6rem; /* slightly more space between icon + text */
-}
-    #events .icon-heading .icon {
-  position: relative;
-  top: 1px; /* nudge as needed */
-}
-
-/* Make the little dots in the calendar visible */
-#events .icon-heading .icon-calendar circle {
-  fill: var(--primary);
-  stroke: none;
-}
-
-/* Slight color tweak per card, if you want */
-#events .events-card--right .icon-heading .icon {
-  stroke: var(--accent);
-}
-
-#events .events-card--right .icon-heading .icon-calendar circle {
-  fill: var(--accent);
 }
 
 /* Make both cards the same height */
@@ -486,7 +452,7 @@
     0 10px 26px rgba(15, 23, 42, 0.09),
     0 2px 6px rgba(15, 23, 42, 0.05);
   position: relative;
-  overflow: hidden;               /* make bottom fade follow rounded corners */
+  overflow: hidden;               /* bottom fade respects rounded corners */
   animation: events-card-in 0.45s ease-out both;
 }
 
@@ -529,19 +495,6 @@
     0 4px 10px rgba(15, 23, 42, 0.08);
 }
 
-/* Headings with icons */
-#events h3.icon-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-}
-
-#events h3.icon-heading .icon {
-  font-size: 1.25rem;
-}
-
 /* Slightly tighter list line-height in cards for readability */
 #events .card li {
   margin-bottom: 0.55rem;
@@ -559,7 +512,6 @@
     transform: translateY(0);
   }
 }
-
   /* ================================
      Join section
   =================================== */
