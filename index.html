@@ -458,6 +458,8 @@
   border-left: 4px solid rgba(22, 75, 112, 0.25); /* soft default */
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+    #events .events-card--left h3::before { content: "🔁"; }
+#events .events-card--right h3::before { content: "📅"; }
 
 /* Left card – recurring meetings: deep navy accent */
 #events .card:first-child {
@@ -807,6 +809,7 @@
   </section>
 
  <!-- ====== Events ====== -->
+<!-- ====== Events ====== -->
 <section id="events">
   <div class="container">
     <p class="subheading">Events</p>
@@ -830,14 +833,14 @@
         </p>
       </div>
 
-      <!-- Right card -->
+      <!-- Right card (lifts on hover) -->
       <div class="card events-card--right lift-card">
         <h3>Upcoming dates</h3>
         <ul>
           <li>
             <strong>Next meetup:</strong>
             <span class="date-badge">Dec 12, 2025</span>
-            <span class="event-location">@ Barrington Library</span>
+            Barrington Library
           </li>
           <li>
             <strong>Special event:</strong> TBD
@@ -849,6 +852,14 @@
       </div>
     </div>
 
+    <!-- Optional CTA row under cards -->
+    <!--
+    <div class="events-cta">
+      <a href="#join" class="btn btn-primary">Get event updates</a>
+    </div>
+    -->
+  </div>
+</section>
 
   <!-- ====== Contact ====== -->
   <section id="contact">
