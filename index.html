@@ -416,6 +416,23 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+    /* ===== Event Card Heading Icons ===== */
+.icon-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary); /* match your color scheme */
+  margin-top: 1px;
+}
 
 #events .card {
   padding: 1.5rem 1.75rem;
@@ -458,8 +475,15 @@
   border-left: 4px solid rgba(22, 75, 112, 0.25); /* soft default */
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-    #events .events-card--left h3::before { content: "🔁"; }
-#events .events-card--right h3::before { content: "📅"; }
+    #events .events-card--left h3::before {
+  content: "🔄";
+  font-size: 1.25rem;
+}
+
+#events .events-card--right h3::before {
+  content: "📅";
+  font-size: 1.25rem;
+}
 
 /* Left card – recurring meetings: deep navy accent */
 #events .card:first-child {
@@ -808,7 +832,6 @@
     </div>
   </section>
 
- <!-- ====== Events ====== -->
 <!-- ====== Events ====== -->
 <section id="events">
   <div class="container">
@@ -822,7 +845,15 @@
     <div class="two-column" style="margin-top: 1.5rem;">
       <!-- Left card -->
       <div class="card events-card--left">
-        <h3>Recurring meetings</h3>
+        <h3 class="icon-heading">
+  <span class="icon-svg">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="1 4 1 10 7 10"></polyline>
+      <path d="M3.51 15a9 9 0 1 0 .49-5"></path>
+    </svg>
+  </span>
+  Recurring meetings
+</h3>
         <ul>
           <li><strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)</li>
           <li><strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues</li>
@@ -835,7 +866,17 @@
 
       <!-- Right card (lifts on hover) -->
       <div class="card events-card--right lift-card">
-        <h3>Upcoming dates</h3>
+       h3 class="icon-heading">
+  <span class="icon-svg">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="16" y1="2" x2="16" y2="6"></line>
+      <line x1="8" y1="2" x2="8" y2="6"></line>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+    </svg>
+  </span>
+  Upcoming dates
+</h3>
         <ul>
           <li>
             <strong>Next meetup:</strong>
