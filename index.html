@@ -415,6 +415,39 @@
  #events {
   padding-top: 3rem;
 }
+    /* Headings with SVG icons */
+#events .icon-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+/* Base icon style */
+#events .icon-heading .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 1.7;
+}
+
+/* Make the little dots in the calendar visible */
+#events .icon-heading .icon-calendar circle {
+  fill: var(--primary);
+  stroke: none;
+}
+
+/* Slight color tweak per card, if you want */
+#events .events-card--right .icon-heading .icon {
+  stroke: var(--accent);
+}
+
+#events .events-card--right .icon-heading .icon-calendar circle {
+  fill: var(--accent);
+}
 
 /* Make both cards the same height */
 #events .two-column {
@@ -803,9 +836,16 @@
       <!-- Left card -->
       <div class="card events-card--left">
         <h3 class="icon-heading">
-          <span class="icon">🔁</span>
-          Recurring meetings
-        </h3>
+  <!-- Circular arrows / repeat icon -->
+  <svg class="icon icon-repeat" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 7h9.5a4.5 4.5 0 0 1 0 9H11" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="7 4 4 7 7 10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M20 17h-9.5a4.5 4.5 0 0 1 0-9H13" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="17 20 20 17 17 14" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  <span>Recurring meetings</span>
+</h3>
+
 
         <ul>
           <li><strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)</li>
@@ -820,10 +860,19 @@
 
       <!-- Right card -->
       <div class="card events-card--right lift-card">
-        <h3 class="icon-heading">
-          <span class="icon">📅</span>
-          Upcoming dates
-        </h3>
+       <h3 class="icon-heading">
+  <!-- Calendar icon -->
+  <svg class="icon icon-calendar" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3.5" y="5.5" width="17" height="15" rx="2" ry="2" stroke-linejoin="round" />
+    <path d="M3.5 10h17" stroke-linecap="round" />
+    <path d="M9 3.5v4" stroke-linecap="round" />
+    <path d="M15 3.5v4" stroke-linecap="round" />
+    <circle cx="9" cy="13.5" r="0.8" />
+    <circle cx="12" cy="13.5" r="0.8" />
+    <circle cx="15" cy="13.5" r="0.8" />
+  </svg>
+  <span>Upcoming dates</span>
+</h3>
 
         <ul>
           <li>
