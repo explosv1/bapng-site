@@ -112,9 +112,25 @@
     }
 
     .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .subheading {
+  margin-bottom: 0.25rem;
+}
+
+.hero .lead {
+  margin-bottom: 0.9rem;
+}
+
+.hero-highlights {
+  justify-content: flex-start;
+}
+
+.hero-actions {
+  margin-top: 0.5rem;
+}
 
     .hero p.lead {
       font-size: 1rem;
@@ -348,8 +364,22 @@
     font-size: 1.6rem;
   }
 
+  .hero-inner {
+    gap: 1.75rem;
+  }
+
   .hero-highlights {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-card {
+    margin-top: 0.5rem;
   }
 
   /* Header layout on mobile/tablet */
@@ -459,45 +489,7 @@
 </header>
 
   <!-- ====== Hero ====== -->
-  <section class="hero" id="home">
-    <div class="container hero-inner">
-      <div>
-        <h2>Professional networking rooted in Barrington and the surrounding communities.</h2>
-        <p class="lead">
-          Barrington Area Professional Networking Group (BAPNG) brings together professionals, business owners,
-          and leaders who live or work in the greater Barrington area to connect, learn, and support one another in an inclusive environment.
-        </p>
-
-        <div class="hero-highlights">
-          <span class="pill">Local Connections</span>
-          <span class="pill">Meaningful Conversations</span>
-          <span class="pill">Shared Opportunities</span>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#events" class="btn btn-primary">See Upcoming Meetings</a>
-          <a href="#join" class="btn btn-outline">How to Join</a>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <h3>At a glance</h3>
-        <dl>
-          <dt>Who we are</dt>
-          <dd>Professionals, small business owners, job seekers, and community leaders in and around Barrington.</dd>
-
-          <dt>Where we meet</dt>
-          <dd><!-- Edit this text with your real location -->
-            Typically in the Barrington, IL area. Exact locations are listed with each event.
-          </dd>
-
-          <dt>New here?</dt>
-          <dd>Guests are always welcome. Visit an upcoming meeting to see if we’re a good fit.</dd>
-        </dl>
-      </aside>
-    </div>
-  </section>
-
+ Professional networking rooted in Barrington and the surrounding communities.
   <!-- ====== About ====== -->
   <section id="about">
     <div class="container two-column">
