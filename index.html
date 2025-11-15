@@ -342,17 +342,14 @@
   text-align: center;
 }
 .subtagline {
-  margin: 1.5rem 0 1.75rem;
+  margin: 1.5rem 0 2rem; /* 24px top, 32px bottom */
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.16rem;
   color: var(--muted);
   text-align: center;
   text-transform: uppercase;
-  .subtagline {
-  margin-bottom: 2rem;
-}
-}
+}}
 /* Base H1 (desktop) */
 .site-title {
   text-align: center;
@@ -375,9 +372,13 @@
 .hero-actions {
   display: flex;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem; /* 16px space between buttons */
   flex-wrap: wrap;
-  margin-top: 1.25rem;
+  margin-top: 0.5rem; /* 8px micro-gap for breathing room */
+}
+  .hero-actions a {
+  min-width: 180px; /* Ensures symmetrical button row */
+  text-align: center;
 }
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
@@ -462,12 +463,18 @@
 }
 
 @media (max-width: 480px) {
-.subtagline {
-  font-size: 0.7rem;
-  letter-spacing: 0.08rem;
-}
-  .hero-highlights {
-    grid-template-columns: minmax(0, 1fr);
+  .subtagline {
+    margin: 1rem 0 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .hero-actions a {
+    min-width: 140px;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
   }
 
   .site-title {
