@@ -409,7 +409,7 @@
     margin-bottom: 0.75rem;
   }
 
- /* ============================================
+/* ============================================
    EVENTS SECTION – CLEAN FINAL VERSION
 ============================================ */
 
@@ -418,34 +418,11 @@
   align-items: stretch;
 }
 
-/* ================================
-   Heading Icons (SAFE SCOPED)
-================================ */
+/* ============================================
+   HEADING + ICONS (COLORED BUBBLES)
+============================================ */
 
-/* Only target the icons in <h3 class="icon-heading"> */
-#events h3.icon-heading .heading-icon {
-  width: 22px;
-  height: 22px;
-  padding: 6px;                               /* bubble spacing */
-  border-radius: 50%;                         /* rounded bubble */
-  background: rgba(22, 75, 112, 0.12);        /* soft navy */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  flex-shrink: 0;
-}
-
-/* Icon strokes inside the bubble */
-#events h3.icon-heading .heading-icon * {
-  stroke: #ffffff;
-  stroke-width: 2;
-  fill: none;                                 /* ensures clean icon lines */
-}
-
-/* Heading text with icon */
-/* ============================================================
-   EVENTS SECTION — ICONS WITH COLORED BUBBLES (Option A)
-   ============================================================ */
-
-/* Base H3 with icon */
+/* H3 heading with icon */
 #events h3.icon-heading {
   display: flex;
   align-items: center;
@@ -455,25 +432,31 @@
   font-weight: 600;
 }
 
-/* Make sure SVGs inside headings behave consistently */
+/* Bubble + base icon styling */
 #events h3.icon-heading svg {
   width: 22px;
   height: 22px;
-  padding: 6px;                   /* bubble size */
-  border-radius: 50%;             /* bubble shape */
-  fill: #ffffff;                  /* icon color stays white */
+  padding: 6px;                 /* bubble size */
+  border-radius: 50%;           /* circular bubble */
   flex-shrink: 0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
+/* Keep icon lines white and hollow */
+#events h3.icon-heading svg * {
+  stroke: #ffffff;
+  stroke-width: 2;
+  fill: none;
+}
+
 /* LEFT card: deep navy bubble */
 #events .events-card--left h3.icon-heading svg {
-  background: #0b3754;           /* deep navy */
+  background: #0b3754;
 }
 
 /* RIGHT card: accent bubble (orange/gold) */
 #events .events-card--right h3.icon-heading svg {
-  background: var(--accent);     /* site accent color */
+  background: var(--accent);
 }
 
 /* On hover, bubble slightly brightens */
