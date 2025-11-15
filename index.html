@@ -439,22 +439,43 @@
   padding-top: 3rem;
 }
 
-/* Make the two cards stretch to the same height */
+/* Make sure the cards sit nicely side-by-side and align at the top */
 #events .two-column {
-  align-items: stretch;
+  align-items: flex-start;
 }
 
-/* Base Events card styling */
+/* Base Events card styling (both cards) */
 #events .card {
   background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
   border-radius: 16px;
   padding: 1.6rem 1.9rem;
+  margin-top: 1.2rem;
 
   box-shadow:
     0 10px 26px rgba(15, 23, 42, 0.09),
     0 2px 6px rgba(15, 23, 42, 0.05);
 
   border-left: 4px solid rgba(22, 75, 112, 0.25); /* soft default */
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Left card – recurring meetings: deep navy accent */
+#events .card:first-child {
+  border-left-color: #0b3754;
+}
+
+/* Right card – upcoming dates: gold accent */
+#events .card.lift-card {
+  border-left-color: var(--accent);
+  margin-top: 1.45rem;          /* tiny nudge so tops visually align */
+}
+
+/* Only the right card “lifts” on hover */
+#events .card.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.16),
+    0 4px 10px rgba(15, 23, 42, 0.08);
 }
 
 /* Left card: navy accent */
@@ -462,7 +483,7 @@
   border-left: 4px solid rgba(22, 75, 112, 0.85);
 }
     #events .card {
-  margin-top: 0.75rem; /* ensures both cards start at the same height */
+  margin-top: 1rem; /* ensures both cards start at the same height */
 }
     #events .card {
   padding: 1.6rem 1.9rem;  /* consistent interior spacing */
