@@ -432,21 +432,67 @@
     0 18px 40px rgba(15, 23, 42, 0.16),
     0 4px 10px rgba(15, 23, 42, 0.08);
 }
-#events .card h3 {
+/* ====== Events section ====== */
+
+#events {
+  padding-top: 3rem;
+}
+
+/* Make the two cards stretch to the same height */
+#events .two-column {
+  align-items: stretch;
+}
+
+/* Base Events card styling */
+#events .card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
+  border-radius: 16px;
+  padding: 1.6rem 1.9rem;
+
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.09),
+    0 2px 6px rgba(15, 23, 42, 0.05);
+
+  border-left: 4px solid rgba(22, 75, 112, 0.25); /* soft default */
+}
+
+/* Left card: navy accent */
+#events .card:first-child {
+  border-left-color: var(--primary);
+}
+
+/* Right card: gold accent (and hover lift) */
+#events .card.lift-card {
+  border-left-color: var(--accent);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  will-change: transform, box-shadow;
+}
+
+#events .card.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.16),
+    0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Headings + spacing inside cards */
+#events h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.75rem;
 }
 
-#events .event-list li {
+#events ul {
   margin-bottom: 0.9rem;
 }
 
-#events .event-meta {
-  color: var(--muted);
-  font-size: 0.9rem;
+#events li {
+  margin-bottom: 0.45rem;
 }
 
-.small {
-  font-size: 0.85rem;
+/* Highlight the actual date line */
+.event-date {
+  font-weight: 700;
+  color: var(--primary);
 }
 
   /* ================================
@@ -736,7 +782,7 @@
 <section id="events">
   <div class="container">
     <p class="subheading">Events</p>
-    <h2>Meetings &amp; Events</h2>
+    <h2>Meetings & Events</h2>
 
     <p>
       BAPNG hosts regular networking meetups in the Barrington area, along with occasional special events such as
@@ -744,19 +790,14 @@
     </p>
 
     <div class="two-column" style="margin-top: 1.5rem;">
+      
       <!-- Left card -->
       <div class="card">
         <h3>Recurring meetings</h3>
         <ul>
-          <li>
-            <strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)
-          </li>
-          <li>
-            <strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues
-          </li>
-          <li>
-            <strong>Format:</strong> Open networking, introductions, and discussion.
-          </li>
+          <li><strong>When:</strong> 2nd Friday of each month, 10:00–12:00 AM (example)</li>
+          <li><strong>Where:</strong> Barrington Library (505 N NW Hwy) and other local venues</li>
+          <li><strong>Format:</strong> Open networking, introductions, and discussion.</li>
         </ul>
         <p class="muted">
           New visitors are always welcome. We encourage you to arrive a few minutes early to settle in and say hello.
@@ -764,23 +805,21 @@
       </div>
 
       <!-- Right card -->
-      <div class="card lift-card">
-          <h3>Upcoming dates</h3>
-        <ul>
-          <li>
-            <strong>Next meetup:</strong> December 12, 2025 @ Barrington Library
-          </li>
-          <li>
-            <strong>Special event:</strong> TBD
-          </li>
-        </ul>
-        <p class="muted">
-          Want to stay up to date? Join our email list or follow us on social media to receive event reminders.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="card lift-card">
+  <h3>Upcoming dates</h3>
+  <ul>
+    <li>
+      <strong>Next meetup:</strong>
+      <span class="event-date">December 12, 2025 @ Barrington Library</span>
+    </li>
+    <li>
+      <strong>Special event:</strong> TBD
+    </li>
+  </ul>
+  <p class="muted">
+    Want to stay up to date? Join our email list or follow us on social media to receive event reminders.
+  </p>
+</div>
 
   <!-- ====== Join Us ====== -->
   <section id="join">
