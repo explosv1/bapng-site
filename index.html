@@ -415,6 +415,17 @@
  #events {
   padding-top: 3rem;
 }
+    /* ===== Events Section Icon Styling ===== */
+#events h3 svg {
+  width: 22px;
+  height: 22px;
+  padding: 6px; /* bubble spacing */
+  background: rgba(22, 75, 112, 0.12); /* soft navy bubble */
+  border-radius: 50%;
+  fill: #ffffff; /* icon stays white */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
     #events h3 svg,
 #events h3:hover svg {
   fill: #ffffff;
@@ -846,6 +857,11 @@
       <!-- Left card -->
       <div class="card events-card--left">
         <h3 class="icon-heading">
+  <svg viewBox="0 0 24 24">
+    <path d="M19 12a7 7 0 1 1-7-7v3l4-4-4-4v3a9 9 0 1 0 9 9h-2z"/>
+  </svg>
+  Recurring meetings
+</h3>
   <!-- Circular arrows / repeat icon -->
   <svg class="icon icon-repeat" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M4 7h9.5a4.5 4.5 0 0 1 0 9H11" stroke-linecap="round" stroke-linejoin="round" />
@@ -870,7 +886,14 @@
 
       <!-- Right card -->
       <div class="card events-card--right lift-card">
-       <h3 class="icon-heading">
+      <h3 class="icon-heading">
+  <svg viewBox="0 0 24 24">
+    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14a2 
+    2 0 0 0 2 2h14a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2zm0 
+    16H5V9h14v11z"/>
+  </svg>
+  Upcoming dates
+</h3>
   <!-- Calendar icon -->
   <svg class="icon icon-calendar" viewBox="0 0 24 24" aria-hidden="true">
     <rect x="3.5" y="5.5" width="17" height="15" rx="2" ry="2" stroke-linejoin="round" />
