@@ -345,23 +345,20 @@
   color: var(--muted);
 }
 
-/* Premium About card */
+/* ===== Enhanced About Card ===== */
 #about .card {
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
   border-radius: 14px;
   padding: 1.5rem 1.75rem;
-
-  /* move card slightly down so it doesn’t feel “higher” than the text */
-  margin-top: 1.1rem;
+  margin-top: 1.3rem;
 
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.03);
 
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid #0b3754; /* deep navy blue */
 }
 
-/* Card heading */
 #about .card h3 {
   font-size: 1.35rem;
   font-weight: 700;
@@ -369,12 +366,20 @@
   color: var(--primary);
 }
 
-/* Card list + paragraph text */
 #about .card li,
 #about .card p {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
+}
+
+#about .card strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+#about .card li {
+  margin-bottom: 0.75rem;
 }
 
 /* Bold labels (Genuine connections, Collaboration, etc.) */
