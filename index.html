@@ -428,12 +428,27 @@
 }
 
 /* Headings with SVG icons */
-#events h3.icon-heading {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;          /* space between icon + text */
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
+#events h3.icon-heading svg {
+  width: 22px;
+  height: 22px;
+  padding: 6px;
+  background: rgba(22, 75, 112, 0.12);
+  border-radius: 50%;
+  fill: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+/* Prevent affecting ANY other SVGs */
+#events .card svg:not(.heading-icon) {
+  all: unset;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  fill: inherit;
+  box-shadow: none;
 }
 
 /* Make both cards the same height */
@@ -809,6 +824,9 @@
       <!-- Left card -->
       <div class="card events-card--left">
         <h3 class="icon-heading">
+  <svg class="heading-icon" ...> … </svg>
+  Recurring meetings
+</h3>
   <svg viewBox="0 0 24 24">
     <path d="M19 12a7 7 0 1 1-7-7v3l4-4-4-4v3a9 9 0 1 0 9 9h-2z"/>
   </svg>
@@ -839,6 +857,9 @@
       <!-- Right card -->
       <div class="card events-card--right lift-card">
       <h3 class="icon-heading">
+  <svg class="heading-icon" ...> … </svg>
+  Upcoming dates
+</h3>
   <svg viewBox="0 0 24 24">
     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14a2 
     2 0 0 0 2 2h14a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2zm0 
