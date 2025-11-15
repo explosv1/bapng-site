@@ -410,8 +410,13 @@
   }
 
 /* ============================================
-   EVENTS SECTION – CLEAN FINAL VERSION
-============================================ */
+   EVENTS SECTION – FINAL VERSION
+  ============================================ */
+
+/* Give the section a little top breathing room (optional) */
+#events {
+  padding-top: 3rem;
+}
 
 /* Make both cards the same height */
 #events .two-column {
@@ -419,49 +424,54 @@
 }
 
 /* ============================================
-   HEADING + ICONS (COLORED BUBBLES)
+   HEADING + ICONS
 ============================================ */
 
-/* H3 heading with icon */
+/* H3 headings with inline icon */
 #events h3.icon-heading {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   font-size: 1.15rem;
-  margin-bottom: 1rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-/* Bubble + base icon styling */
-#events h3.icon-heading svg {
-  width: 22px;
-  height: 22px;
-  padding: 6px;                 /* bubble size */
-  border-radius: 50%;           /* circular bubble */
+/* Bubble around the icon – bigger & softer */
+#events h3.icon-heading .heading-icon {
+  width: 26px;                 /* icon canvas */
+  height: 26px;
+  padding: 7px;                /* bubble thickness */
+  border-radius: 999px;        /* fully round bubble */
+  background: rgba(22, 75, 112, 0.12); /* default soft navy (overridden per card) */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-
-/* Keep icon lines white and hollow */
-#events h3.icon-heading svg * {
-  stroke: #ffffff;
-  stroke-width: 2;
-  fill: none;
 }
 
 /* LEFT card: deep navy bubble */
-#events .events-card--left h3.icon-heading svg {
-  background: #0b3754;
+#events .events-card--left h3.icon-heading .heading-icon {
+  background: #0b3754;         /* deep navy */
 }
 
-/* RIGHT card: accent bubble (orange/gold) */
-#events .events-card--right h3.icon-heading svg {
-  background: var(--accent);
+/* RIGHT card: accent bubble */
+#events .events-card--right h3.icon-heading .heading-icon {
+  background: var(--accent);   /* your accent (gold/orange) */
 }
 
-/* On hover, bubble slightly brightens */
-#events .events-card--right h3.icon-heading svg:hover,
-#events .events-card--left h3.icon-heading svg:hover {
+/* Make the icon shapes inside the SVG white */
+#events h3.icon-heading .heading-icon path,
+#events h3.icon-heading .heading-icon rect,
+#events h3.icon-heading .heading-icon circle,
+#events h3.icon-heading .heading-icon line,
+#events h3.icon-heading .heading-icon polyline {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 1.7;
+}
+
+/* Slight bubble brighten on hover */
+#events .events-card--left h3.icon-heading .heading-icon:hover,
+#events .events-card--right h3.icon-heading .heading-icon:hover {
   filter: brightness(1.08);
 }
 
@@ -479,16 +489,16 @@
     0 10px 26px rgba(15, 23, 42, 0.09),
     0 2px 6px rgba(15, 23, 42, 0.05);
   position: relative;
-  overflow: hidden;
+  overflow: hidden;               /* lets the bottom fade follow the rounded corners */
   animation: events-card-in 0.45s ease-out both;
 }
 
-/* Slight stagger animation for right card */
+/* Slight stagger animation for the second card */
 #events .card:nth-child(2) {
   animation-delay: 0.08s;
 }
 
-/* Bottom fade overlay */
+/* Soft bottom gradient fade in cards */
 #events .card::after {
   content: "";
   position: absolute;
@@ -508,17 +518,17 @@
    CARD-SPECIFIC ACCENTS
 ============================================ */
 
-/* Left card (Recurring Meetings) */
+/* Left card (Recurring meetings) */
 #events .events-card--left {
   border-left-color: #0b3754; /* deep navy */
 }
 
-/* Right card (Upcoming Dates) */
+/* Right card (Upcoming dates) */
 #events .events-card--right {
   border-left-color: var(--accent);
 }
 
-/* Right card hover lift only */
+/* Only the right card lifts on hover */
 #events .events-card--right.lift-card:hover {
   transform: translateY(-4px);
   box-shadow:
@@ -526,7 +536,7 @@
     0 4px 10px rgba(15, 23, 42, 0.08);
 }
 
-/* List readability */
+/* List readability inside the cards */
 #events .card li {
   margin-bottom: 0.55rem;
   line-height: 1.45;
@@ -846,9 +856,9 @@
         <h3 class="icon-heading">
           <!-- Recurring icon -->
           <svg class="heading-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
+  <polyline points="3 3 3 9 9 9" />
+  <path d="M3 5a9 9 0 1 1-2 7" />
+</svg>
           Recurring meetings
         </h3>
 
@@ -877,7 +887,7 @@
         </h3>
 
         <ul>
-          <li><strong>Next meetup:</strong> December 12, 2025;10-12 AM @ Barrington Library</li>
+          <li><strong>Next meetup:</strong> December 12, 2025; 10–12 AM @ Barrington Library</li>
           <li><strong>Special event:</strong> TBD</li>
         </ul>
 
