@@ -59,12 +59,12 @@
     }
 
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;              /* space between logo block and nav */
+  flex-wrap: nowrap;      /* keep logo + nav on the same row */
+}
 
     .logo-block h1 {
       font-size: 1.4rem;
@@ -76,11 +76,14 @@
       opacity: 0.9;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
+    .main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 0.5rem;              /* space between items */
+  text-align: right;        /* align text to the right edge */
     }
 
     nav a {
@@ -343,32 +346,29 @@
 
   <!-- ====== Header / Navigation ====== -->
   <header class="site-header">
-   <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center;">
-  
-  <!-- LEFT SIDE: Logo + Text -->
-  <div class="logo-block" style="display: flex; align-items: center; gap: 3rem;">
-  <img src="logo.png" alt="BAPNG Logo" style="height: 160px; width: auto;">
-  <div>
-    <h1 style="margin: 0; font-size: 1.85rem; line-height: 1.3;">
-      Barrington Area Professional Networking Group
-    </h1>
-    <p class="tagline" style="margin: 0.2rem 0 0; font-size: 1rem; letter-spacing: 0.25rem; text-transform: uppercase;">
-      Connect • Learn • Mentor • Coach
-    </p>
+  <div class="container header-inner">
+    <div class="logo-block" style="display: flex; align-items: center; gap: 3rem;">
+      <img src="logo.png" alt="BAPNG Logo" style="height: 160px; width: auto;">
+      <div>
+        <h1 style="margin: 0; font-size: 1.85rem; line-height: 1.3;">
+          Barrington Area Professional Networking Group
+        </h1>
+        <p class="tagline" style="margin: 0.2rem 0 0; font-size: 1rem; letter-spacing: 0.25rem; text-transform: uppercase;">
+          Connect • Learn • Mentor • Coach
+        </p>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#join">Join Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-
-  <!-- RIGHT SIDE: Vertical Navigation -->
-  <nav>
-    <ul style="display: flex; flex-direction: column; gap: 0.4rem; list-style: none; text-align: right; margin: 0; padding: 0;">
-      <li><a href="#about">About</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#join">Join Us</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  </header>
+</header>
 
   <!-- ====== Hero ====== -->
   <section class="hero" id="home">
