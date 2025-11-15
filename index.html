@@ -347,18 +347,36 @@
 
 /* ===== Enhanced About Card ===== */
 #about .card {
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
-  border-radius: 14px;
-  padding: 1.5rem 1.75rem;
-  margin-top: 1.3rem;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f2f4fa 100%
+  ); /* slightly stronger soft gradient */
+
+  border-radius: 16px;           /* a bit more rounded */
+  padding: 1.6rem 1.9rem;
+  margin-top: 1.1rem;            /* small gap from the text */
 
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.05),
-    0 2px 4px rgba(0, 0, 0, 0.03);
+    0 14px 35px rgba(15, 23, 42, 0.12),  /* deeper but soft */
+    0 2px 6px rgba(15, 23, 42, 0.06);
 
-  border-left: 4px solid #0b3754; /* deep navy blue */
+  border-left: 5px solid #0b3754; /* thicker deep navy edge */
+
+  transition: transform 0.18s ease, 
+              box-shadow 0.18s ease;
+  will-change: transform, box-shadow;
 }
 
+/* Hover state: gentle lift */
+#about .card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.16),
+    0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Card heading */
 #about .card h3 {
   font-size: 1.35rem;
   font-weight: 700;
@@ -366,6 +384,7 @@
   color: var(--primary);
 }
 
+/* Card list + paragraph text */
 #about .card li,
 #about .card p {
   font-size: 1rem;
@@ -373,22 +392,13 @@
   color: var(--text);
 }
 
+/* Strong labels in card list */
 #about .card strong {
   color: var(--primary);
   font-weight: 700;
 }
 
-#about .card li {
-  margin-bottom: 0.75rem;
-}
-
-/* Bold labels (Genuine connections, Collaboration, etc.) */
-#about .card strong {
-  color: var(--primary);
-  font-weight: 700;
-}
-
-/* Space between bullets */
+/* Extra spacing between bullets */
 #about .card li {
   margin-bottom: 0.75rem;
 }
