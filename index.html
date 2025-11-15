@@ -315,69 +315,78 @@
 
     /* ====== ABOUT section ====== */
 
-    #about {
-      padding-top: 3rem;
-    }
+   #about {
+  padding-top: 3rem;
+}
 
-    #about .subheading {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
+/* Small label ("ABOUT") */
+#about .subheading {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
 
-    #about h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-    }
+/* Main About headline */
+#about h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
 
-    #about p {
-      font-size: 1.05rem;
-      line-height: 1.65;
-      margin-bottom: 1.1rem;
-      color: var(--muted);
-    }
+/* About body text */
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+  color: var(--muted);
+}
 
-    /* Premium About card */
-    #about .card {
-      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
-      border-radius: 14px;
-      padding: 1.5rem 1.75rem;
-      margin-top: 0.75rem;
+/* Premium About card */
+#about .card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
 
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.05),
-        0 2px 4px rgba(0, 0, 0, 0.03);
+  /* move card slightly down so it doesn’t feel “higher” than the text */
+  margin-top: 1.1rem;
 
-      border-left: 4px solid var(--accent);
-    }
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.03);
 
-    #about .card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
+  border-left: 4px solid var(--accent);
+}
 
-    #about .card li,
-    #about .card p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text);
-    }
+/* Card heading */
+#about .card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
 
-    #about .card strong {
-      color: var(--primary);
-      font-weight: 700;
-    }
+/* Card list + paragraph text */
+#about .card li,
+#about .card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
 
-    #about .card li {
-      margin-bottom: 0.75rem;
-    }
+/* Bold labels (Genuine connections, Collaboration, etc.) */
+#about .card strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Space between bullets */
+#about .card li {
+  margin-bottom: 0.75rem;
+}
 
     /* ====== Events section ====== */
 
