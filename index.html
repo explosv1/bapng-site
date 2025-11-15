@@ -441,12 +441,45 @@
 }
 
 /* Heading text with icon */
+/* ============================================================
+   EVENTS SECTION — ICONS WITH COLORED BUBBLES (Option A)
+   ============================================================ */
+
+/* Base H3 with icon */
 #events h3.icon-heading {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   font-size: 1.15rem;
   margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Make sure SVGs inside headings behave consistently */
+#events h3.icon-heading svg {
+  width: 22px;
+  height: 22px;
+  padding: 6px;                   /* bubble size */
+  border-radius: 50%;             /* bubble shape */
+  fill: #ffffff;                  /* icon color stays white */
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* LEFT card: deep navy bubble */
+#events .events-card--left h3.icon-heading svg {
+  background: #0b3754;           /* deep navy */
+}
+
+/* RIGHT card: accent bubble (orange/gold) */
+#events .events-card--right h3.icon-heading svg {
+  background: var(--accent);     /* site accent color */
+}
+
+/* On hover, bubble slightly brightens */
+#events .events-card--right h3.icon-heading svg:hover,
+#events .events-card--left h3.icon-heading svg:hover {
+  filter: brightness(1.08);
 }
 
 /* ============================================
