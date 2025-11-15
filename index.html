@@ -427,35 +427,49 @@
    HEADING + ICONS
 ============================================ */
 
-/* H3 headings with inline icon */
+/* H3 layout */
 #events h3.icon-heading {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   font-size: 1.15rem;
-  font-weight: 600;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-/* Bubble around the icon – bigger & softer */
+/* Icon bubble – shared base */
 #events h3.icon-heading .heading-icon {
-  width: 26px;                 /* icon canvas */
+  width: 26px;          /* bigger icon */
   height: 26px;
-  padding: 7px;                /* bubble thickness */
-  border-radius: 999px;        /* fully round bubble */
-  background: rgba(22, 75, 112, 0.12); /* default soft navy (overridden per card) */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 7px;         /* bigger bubble */
+  border-radius: 999px; /* perfect circle */
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
 }
 
-/* LEFT card: deep navy bubble */
+/* Make the strokes inside the SVG nice and bold + white */
+#events h3.icon-heading .heading-icon * {
+  stroke: #ffffff;
+  stroke-width: 2.4;    /* thicker lines */
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* LEFT card bubble color (Recurring meetings) */
 #events .events-card--left h3.icon-heading .heading-icon {
-  background: #0b3754;         /* deep navy */
+  background: #0b3754;  /* deep navy */
 }
 
-/* RIGHT card: accent bubble */
+/* RIGHT card bubble color (Upcoming dates) */
 #events .events-card--right h3.icon-heading .heading-icon {
-  background: var(--accent);   /* your accent (gold/orange) */
+  background: var(--accent); /* your orange accent */
+}
+
+/* Tiny hover polish: brighten bubble a bit */
+#events .events-card--left h3.icon-heading .heading-icon:hover,
+#events .events-card--right h3.icon-heading .heading-icon:hover {
+  filter: brightness(1.08);
 }
 
 /* Make the icon shapes inside the SVG white */
@@ -854,11 +868,11 @@
       <!-- Left Card -->
       <div class="card events-card--left">
         <h3 class="icon-heading">
-  <svg class="heading-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="1 4 1 10 7 10"></polyline>
-    <polyline points="23 20 23 14 17 14"></polyline>
-    <path d="M3.51 15a9 9 0 0 0 14.63 3m2.35-4a9 9 0 0 0-14.63-3"></path>
-  </svg>
+  <svg class="heading-icon" viewBox="0 0 24 24">
+  <polyline points="1 4 1 10 7 10"></polyline>
+  <polyline points="23 20 23 14 17 14"></polyline>
+  <path d="M3.51 15a9 9 0 0 0 14.63 3m2.35-4a9 9 0 0 0-14.63-3"></path>
+</svg>
   Recurring meetings
 </h3>
 
@@ -876,12 +890,12 @@
       <!-- Right Card -->
       <div class="card events-card--right lift-card">
        <h3 class="icon-heading">
-  <svg class="heading-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-    <line x1="16" y1="2" x2="16" y2="6"></line>
-    <line x1="8" y1="2" x2="8" y2="6"></line>
-    <line x1="3" y1="10" x2="21" y2="10"></line>
-  </svg>
+  <svg class="heading-icon" viewBox="0 0 24 24">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+  <line x1="16" y1="2" x2="16" y2="6"></line>
+  <line x1="8"  y1="2" x2="8"  y2="6"></line>
+  <line x1="3"  y1="10" x2="21" y2="10"></line>
+</svg>
   Upcoming dates
 </h3>
 
