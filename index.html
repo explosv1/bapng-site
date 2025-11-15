@@ -239,17 +239,72 @@
       color: var(--muted);
     }
 
-    /* ====== Sections ====== */
-    section {
-      padding: 2.5rem 0;
-    }
-    /* ====== About Section ====== */
+   /* ====== Sections (general) ====== */
+section {
+  padding: 2.5rem 0;
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--white);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--bg);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+section p {
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+/* base card (used in multiple sections) */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.subheading {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+ul {
+  padding-left: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ====== ABOUT section ====== */
+
 #about {
   padding-top: 3rem;
 }
-* ====== About Section Typography Upgrade ====== */
 
-/* Section label ("ABOUT") */
+/* About subheading ("ABOUT") */
 #about .subheading {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -258,79 +313,60 @@
   margin-bottom: 0.75rem;
 }
 
-/* Main About headline */
+/* About main headline */
 #about h2 {
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--text-dark);
+  color: var(--text);
   margin-bottom: 1.25rem;
 }
 
-/* Body paragraphs */
+/* About body text */
 #about p {
   font-size: 1.05rem;
   line-height: 1.65;
   margin-bottom: 1.1rem;
-  color: var(--muted-dark); /* slightly darker than muted */
+  color: var(--muted);
 }
 
-/* Card headline */
-#about .card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-/* Card text */
-#about .card li,
-#about .card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted-dark);
-}
-
-/* Strong labels in the list (Genuine connections, Collaboration, etc.) */
-#about .card strong {
-  color: var(--text-dark);
-  font-weight: 600;
-}
-
-/* Optional: give the card a bit more breathing room */
-#about .card {
-  padding: 1.5rem 1.75rem;
-}/* ===== Enhanced About Card Layout + Styling ===== */
+/* Premium About card */
 #about .card {
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
   border-radius: 14px;
   padding: 1.5rem 1.75rem;
+  margin-top: 0.75rem;
 
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.05),
     0 2px 4px rgba(0, 0, 0, 0.03);
 
-  border-left: 3px solid #0f1b35; /* deep navy */
-  /* ALIGNMENT FIX ↓↓↓ */
-  margin-top: 1.75rem; /* move card DOWN to align with text */
-}
-    #about .card {
-  margin-top: 0.75rem; /* bump it down slightly */
-}
-/* ===== Style the About Section Card ===== */
-#about .card h3 {
-  color: var(--primary);   /* Dark blue */
+  border-left: 3px solid var(--primary); /* navy accent */
 }
 
+/* Card heading */
+#about .card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* Card list + paragraph text */
+#about .card li,
+#about .card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Strong labels in card list */
 #about .card strong {
-  color: var(--primary);   /* Dark blue for bullet titles */
+  color: var(--primary);
   font-weight: 700;
 }
 
-#about .card p {
-  color: var(--text); /* Keep body text darker but not blue */
-}
-
+/* Extra spacing between bullets */
 #about .card li {
   margin-bottom: 0.75rem;
 }
