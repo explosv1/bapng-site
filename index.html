@@ -333,9 +333,23 @@
 #about .card li {
   margin-bottom: 0.75rem;
 }
-    #about .card {
-  border-left: 4px solid var(--primary);
-  padding-left: 1.5rem;
+    /* Premium card styling for the About section */
+#about .card {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8f9fb 100%
+  ); /* soft top-to-bottom gradient */
+
+  border-radius: 14px; /* slightly more rounded */
+  padding: 1.5rem 1.75rem;
+
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.05),   /* soft outer lift */
+    0 2px 4px rgba(0, 0, 0, 0.03);    /* tiny crisp grounding */
+
+  border-left: 4px solid var(--accent); /* keep your navy accent */
+}
 }
 #about p {
   margin-bottom: 1rem;
@@ -362,7 +376,7 @@
     .two-column {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 3rem;
+      gap: 2.25rem;
       align-items: flex-start;
     }
 
