@@ -337,7 +337,15 @@
   line-height: 1.4;
   text-align: center;
 }
-
+.subtagline {
+  margin: 1rem 0 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+  color: var(--muted);
+  text-align: center;
+  text-transform: uppercase;
+}
 /* Base H1 (desktop) */
 .site-title {
   text-align: center;
@@ -436,7 +444,10 @@
 }
 
 @media (max-width: 480px) {
-
+.subtagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+}
   .hero-highlights {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -513,11 +524,9 @@
         you'll find a friendly, low-pressure space to learn, network, and give back.
       </p>
 
-      <div class="hero-highlights">
-        <span class="pill">Local professionals</span>
-        <span class="pill">Supportive conversations</span>
-        <span class="pill">Shared opportunities</span>
-      </div>
+     <p class="subtagline">
+  LOCAL CONNECTIONS • MEANINGFUL CONVERSATIONS • SHARED OPPORTUNITIES
+</p>
 
       <div class="hero-actions">
         <a href="#events" class="btn btn-primary">See upcoming meetings</a>
