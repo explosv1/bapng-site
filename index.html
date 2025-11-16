@@ -424,76 +424,69 @@
 }
 
 /* ============================================
-   HEADING + ICONS
+   EVENTS SECTION – CLEAN FINAL VERSION
 ============================================ */
 
-/* H3 row: icon + text aligned */
+/* Section spacing */
+#events {
+  padding-top: 3rem;
+}
+
+/* Make both cards the same height */
+#events .two-column {
+  align-items: stretch;
+}
+
+/* ===========================
+   HEADINGS + ICON BUBBLES
+=========================== */
+
+/* Icon + text row */
 #events h3.icon-heading {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;            /* spacing between bubble and text */
+  align-items: center;       /* keep bubble + text on same baseline */
+  gap: 0.75rem;              /* space between bubble + text */
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem;
   line-height: 1.3;
 }
 
-/* Larger bubble + centered icon */
+/* Bubble + icon base */
 #events h3.icon-heading svg.heading-icon {
-  width: 38px;             /* bubble size */
+  width: 38px;               /* bubble size */
   height: 38px;
-  padding: 9px;            /* icon inside bubble */
+  padding: 9px;              /* icon sits inside bubble */
   border-radius: 50%;
   flex-shrink: 0;
   display: block;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  background: #0b3754;       /* default: navy bubble (left card) */
   fill: none;
 }
 
-/* Icon strokes inside bubble */
+/* Icon strokes inside the bubble */
 #events h3.icon-heading svg.heading-icon * {
-  stroke: #ffffff;         /* icon lines are white */
+  stroke: #ffffff;           /* icon lines are white */
   stroke-width: 2.2;
   fill: none;
-}
-
-/* Fix misalignment in the Recurring Meetings icon */
-#events .events-card--left h3.icon-heading svg.heading-icon {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-#events .events-card--left h3.icon-heading svg.heading-icon * {
-  vector-effect: non-scaling-stroke;
-}
-
-/* Normalize centering inside the viewBox */
-#events .events-card--left h3.icon-heading svg.heading-icon {
-  viewBox: 0 0 24 24;
-}
-
-/* Right card bubble color (Upcoming dates) */
+/* RIGHT card bubble color (Upcoming dates) */
 #events .events-card--right h3.icon-heading svg.heading-icon {
-  background: var(--accent); /* your orange/gold accent */
+  background: var(--accent); /* accent gold */
 }
 
-/* Slight hover highlight */
-/* Hover lift works ONLY on the right (Upcoming Dates) card */
-#events .card.events-card--right.lift-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 18px 40px rgba(15, 23, 42, 0.16),
-    0 4px 12px rgba(15, 23, 42, 0.10);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* Slight hover highlight on bubbles */
+#events h3.icon-heading svg.heading-icon:hover {
+  filter: brightness(1.12);
 }
 
-/* Ensure normal cards don’t shift unexpectedly */
-#events .card.events-card--right.lift-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-/* ============================================
+/* ===========================
    CARD BASE STYLING
-============================================ */
+=========================== */
 
 #events .card {
   background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
@@ -505,16 +498,21 @@
     0 10px 26px rgba(15, 23, 42, 0.09),
     0 2px 6px rgba(15, 23, 42, 0.05);
   position: relative;
-  overflow: hidden;               /* lets the bottom fade follow the rounded corners */
+  overflow: hidden;
   animation: events-card-in 0.45s ease-out both;
 }
 
-/* Slight stagger animation for the second card */
-#events .card:nth-child(2) {
-  animation-delay: 0.08s;
+/* Left card (Recurring meetings) accent line */
+#events .events-card--left {
+  border-left-color: #0b3754; /* deep navy */
 }
 
-/* Soft bottom gradient fade in cards */
+/* Right card (Upcoming dates) accent line */
+#events .events-card--right {
+  border-left-color: var(--accent);
+}
+
+/* Bottom soft fade so content feels anchored */
 #events .card::after {
   content: "";
   position: absolute;
@@ -530,37 +528,32 @@
   pointer-events: none;
 }
 
-/* ============================================
-   CARD-SPECIFIC ACCENTS
-============================================ */
-
-/* Left card (Recurring meetings) */
-#events .events-card--left {
-  border-left-color: #0b3754; /* deep navy */
-}
-
-/* Right card (Upcoming dates) */
-#events .events-card--right {
-  border-left-color: var(--accent);
-}
-
-/* Only the right card lifts on hover */
-#events .events-card--right.lift-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 18px 40px rgba(15, 23, 42, 0.16),
-    0 4px 10px rgba(15, 23, 42, 0.08);
-}
-
-/* List readability inside the cards */
+/* List readability in cards */
 #events .card li {
   margin-bottom: 0.55rem;
   line-height: 1.45;
 }
 
-/* ============================================
+/* ===========================
+   HOVER LIFT – RIGHT CARD ONLY
+=========================== */
+
+/* Smooth transition for the lift card */
+#events .card.events-card--right.lift-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover state: subtle lift + stronger shadow */
+#events .card.events-card--right.lift-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.16),
+    0 4px 12px rgba(15, 23, 42, 0.10);
+}
+
+/* ===========================
    ENTRANCE ANIMATION
-============================================ */
+=========================== */
 
 @keyframes events-card-in {
   from {
