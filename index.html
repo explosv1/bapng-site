@@ -588,7 +588,13 @@
 #contact .two-column {
   align-items: stretch;   /* forces both cards to match tallest */
 }
-
+.contact-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 0.2rem; /* matches Get in touch spacing */
+  color: var(--text);
+}
 #contact .card {
   height: 100%;           /* each card fills the stretched height */
   display: flex;
@@ -1054,15 +1060,27 @@
         </div>
 
       <!-- Right side: Stay connected -->
-      <div class="contact-side">
-      <div class="card stay-connected">
-  <h3>Stay connected</h3>
+      <div class="contact-right">
 
-  <p>
-    <a href="https://www.facebook.com/bapng" target="_blank">
-      Follow us on Facebook
-    </a>
-  </p>
+  <h3 class="contact-heading">Stay connected</h3>
+
+  <div class="card stay-connected">
+    <p>
+      <a href="https://www.facebook.com/bapng" target="_blank">
+        Follow us on Facebook
+      </a>
+    </p>
+
+    <p>
+      <a href="mailto:barringtonnetworking@proton.me">
+        Email us
+      </a>
+      <br>
+      <small>(Facebook messaging/posting is faster. It may take us a few days to answer emails — sorry in advance!)</small>
+    </p>
+  </div>
+
+</div>
 
   </div>
       </div>
