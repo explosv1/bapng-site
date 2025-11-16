@@ -604,9 +604,18 @@
 /* Two-column layout: main card + side cards */
 #contact .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
-  gap: 2.5rem;
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 1.75rem;
+  align-items: stretch;  /* make columns stretch to same height */
+}
+    /* Make each column a flex container so the card can grow */
+#contact .contact-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+    /* The cards fill the available vertical space */
+#contact .contact-grid .card {
+  flex: 1 1 auto;
 }
 
     #contact .card {
@@ -705,7 +714,18 @@
   padding-left: 0;
   margin: 0;
 }
+/* ===== Contact links (email + Facebook) ===== */
+#contact a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(22, 75, 112, 0.2);
+  padding-bottom: 1px;
+}
 
+#contact a:hover {
+  border-bottom-color: rgba(22, 75, 112, 0.8);
+}
 #contact .contact-links li {
   margin-bottom: 0.45rem;
 }
@@ -1038,10 +1058,19 @@
 <!-- ====== Contact ====== -->
 <section id="contact">
   <div class="container">
-    <p class="subheading">Contact</p>
-    <h2>Get in touch</h2>
-
     <div class="contact-grid">
+      <div>
+        <h3>Get in touch</h3>
+        <div class="card">...</div>
+      </div>
+
+      <div>
+        <h3>Stay connected</h3>
+        <div class="card">...</div>
+      </div>
+    </div>
+  </div>
+</section>
       <!-- Main contact card -->
       <div class="card contact-main">
         <p>
