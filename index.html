@@ -584,7 +584,17 @@
 #contact {
   padding-top: 3rem;
 }
+/* Make Get in touch + Stay connected cards the same height */
+#contact .two-column {
+  align-items: stretch;   /* forces both cards to match tallest */
+}
 
+#contact .card {
+  height: 100%;           /* each card fills the stretched height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 /* Two-column layout: main card + side cards */
 #contact .contact-grid {
   display: grid;
@@ -593,6 +603,9 @@
   align-items: flex-start;
 }
 
+    #contact .card {
+  padding-bottom: 2rem;
+}
 /* Main left contact card */
 #contact .contact-main {
   padding: 1.8rem 1.9rem;
@@ -697,7 +710,12 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-
+#contact .stay-connected-card .email-note {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
 /* Responsive: stack cards on small screens */
 @media (max-width: 768px) {
   #contact .contact-grid {
@@ -1041,24 +1059,19 @@
 
       <!-- Right side: Stay connected -->
       <div class="contact-side">
-        <div class="card contact-pill">
-          <h3>Stay connected</h3>
-          <ul class="contact-links">
-            <li>
-              <!-- TODO: replace the URL below with your real Facebook page URL -->
-              <a href="https://www.facebook.com//groups/1800881530842613"
-                 target="_blank" rel="noopener">
-                Follow us on Facebook
-              </a>
-            </li>
-            <li>
-              <a href="mailto:barringtonnetworking@proton.me">
-                Email us
-                (Facebook messaging/posting is faster. It may take us a few days to answer emails. Sorry in advance.)
-              </a>
-            </li>
-          </ul>
-        </div>
+       <div class="card stay-connected-card">
+  <h3>Stay connected</h3>
+
+  <a href="https://www.facebook.com/YOUR_PAGE_URL" target="_blank">
+    Follow us on Facebook
+  </a>
+
+  <a href="mailto:barringtonnetworking@proton.me">
+    Email us
+  </a>
+  <p class="email-note">(Facebook messaging/posting is faster.  
+  It may take us a few days to answer emails — sorry in advance!)</p>
+</div>
       </div>
     </div>
   </div>
