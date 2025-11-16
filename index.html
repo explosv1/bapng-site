@@ -431,59 +431,49 @@
 /* ============ EVENTS HEADING ROW ============ */
 
 /* H3 row: icon + text perfectly centered */
+/* H3 row: perfect alignment */
 #events h3.icon-heading {
   display: flex;
-  align-items: center;       /* vertical center for bubble + text */
-  gap: 0.6rem;               /* space between bubble and text */
-  font-size: 1.15rem;
+  align-items: center;
+  gap: 0.75rem;            /* increased spacing for larger icon */
+  font-size: 1.2rem;
   font-weight: 600;
-  margin: 0 0 1rem;          /* no top margin, only bottom */
-  padding: 0;
-  line-height: 1.3;          /* keeps text nicely balanced */
+  margin: 0 0 1rem;
+  line-height: 1.3;
 }
 
-/* Bubble + icon */
+/* Larger bubble + centered icon */
 #events h3.icon-heading svg.heading-icon {
-  width: 26px;               /* slightly larger bubble */
-  height: 26px;
-  padding: 7px;
+  width: 38px;             /* bigger bubble */
+  height: 38px;
+  padding: 9px;            /* icon fit inside bubble */
   border-radius: 50%;
   flex-shrink: 0;
-  display: block;            /* removes baseline weirdness */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  display: block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
   fill: none;
 }
 
-/* LEFT card bubble color (navy) */
+/* Icon strokes inside bubble */
+#events h3.icon-heading svg.heading-icon * {
+  stroke: #ffffff;         /* always white */
+  stroke-width: 2.2;       /* slightly thicker for clarity */
+  fill: none;
+}
+
+/* LEFT card bubble color */
 #events .events-card--left h3.icon-heading svg.heading-icon {
   background: #0b3754;
 }
 
-/* RIGHT card bubble color (accent) */
+/* RIGHT card bubble color */
 #events .events-card--right h3.icon-heading svg.heading-icon {
   background: var(--accent);
 }
-/* Subtle hover brighten */
-#events .events-card--left h3.icon-heading svg.heading-icon:hover,
-#events .events-card--right h3.icon-heading svg.heading-icon:hover {
-  filter: brightness(1.08);
-}
 
-/* Icon strokes inside the bubble stay white */
-#events h3.icon-heading svg.heading-icon path,
-#events h3.icon-heading svg.heading-icon polyline,
-#events h3.icon-heading svg.heading-icon rect,
-#events h3.icon-heading svg.heading-icon line,
-#events h3.icon-heading svg.heading-icon circle {
-  stroke: #ffffff;
-  stroke-width: 2;
-  fill: none;
-}
-
-/* Slight bubble brighten on hover */
-#events .events-card--left h3.icon-heading .heading-icon:hover,
-#events .events-card--right h3.icon-heading .heading-icon:hover {
-  filter: brightness(1.08);
+/* Slight hover highlight */
+#events h3.icon-heading svg.heading-icon:hover {
+  filter: brightness(1.12);
 }
 
 /* ============================================
