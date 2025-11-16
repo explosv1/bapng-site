@@ -478,10 +478,19 @@
 }
 
 /* Slight hover highlight */
-#events h3.icon-heading svg.heading-icon:hover {
-  filter: brightness(1.12);
+/* Hover lift works ONLY on the right (Upcoming Dates) card */
+#events .card.events-card--right.lift-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.16),
+    0 4px 12px rgba(15, 23, 42, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Ensure normal cards don’t shift unexpectedly */
+#events .card.events-card--right.lift-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 /* ============================================
    CARD BASE STYLING
 ============================================ */
@@ -880,7 +889,7 @@
       </div>
 
       <!-- Right Card -->
-      <div class="card events-card--right lift-card">
+     <div class="card events-card--right lift-card">
       <h3 class="icon-heading">
   <svg class="heading-icon" viewBox="0 0 24 24">
     <!-- calendar outline -->
