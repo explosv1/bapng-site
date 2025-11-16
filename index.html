@@ -411,9 +411,9 @@
 
 /* ============================================
    EVENTS SECTION – FINAL VERSION
-  ============================================ */
+============================================ */
 
-/* Give the section a little top breathing room (optional) */
+/* Section spacing */
 #events {
   padding-top: 3rem;
 }
@@ -427,15 +427,11 @@
    HEADING + ICONS
 ============================================ */
 
-/* H3 layout */
-/* ============ EVENTS HEADING ROW ============ */
-
-/* H3 row: icon + text perfectly centered */
-/* H3 row: perfect alignment */
+/* H3 row: icon + text aligned */
 #events h3.icon-heading {
   display: flex;
   align-items: center;
-  gap: 0.75rem;            /* increased spacing for larger icon */
+  gap: 0.75rem;            /* spacing between bubble and text */
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem;
@@ -444,9 +440,9 @@
 
 /* Larger bubble + centered icon */
 #events h3.icon-heading svg.heading-icon {
-  width: 38px;             /* bigger bubble */
+  width: 38px;             /* bubble size */
   height: 38px;
-  padding: 9px;            /* icon fit inside bubble */
+  padding: 9px;            /* icon inside bubble */
   border-radius: 50%;
   flex-shrink: 0;
   display: block;
@@ -456,19 +452,19 @@
 
 /* Icon strokes inside bubble */
 #events h3.icon-heading svg.heading-icon * {
-  stroke: #ffffff;         /* always white */
-  stroke-width: 2.2;       /* slightly thicker for clarity */
+  stroke: #ffffff;         /* icon lines are white */
+  stroke-width: 2.2;
   fill: none;
 }
 
-/* LEFT card bubble color */
+/* Left card bubble color (Recurring meetings) */
 #events .events-card--left h3.icon-heading svg.heading-icon {
-  background: #0b3754;
+  background: #0b3754;     /* deep navy */
 }
 
-/* RIGHT card bubble color */
+/* Right card bubble color (Upcoming dates) */
 #events .events-card--right h3.icon-heading svg.heading-icon {
-  background: var(--accent);
+  background: var(--accent); /* your orange/gold accent */
 }
 
 /* Slight hover highlight */
