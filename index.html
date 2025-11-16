@@ -428,6 +428,7 @@
 ============================================ */
 
 /* H3 layout */
+* Layout of the H3 with icon */
 #events h3.icon-heading {
   display: flex;
   align-items: center;
@@ -437,38 +438,42 @@
   font-weight: 600;
 }
 
-/* Icon bubble – shared base */
-#events h3.icon-heading .heading-icon {
-  width: 26px;          /* bigger icon */
-  height: 26px;
-  padding: 7px;         /* bigger bubble */
-  border-radius: 999px; /* perfect circle */
+/* Bubble + SVG sizing – force override */
+#events h3.icon-heading svg.heading-icon {
+  width: 30px !important;      /* bigger icon */
+  height: 30px !important;
+  padding: 7px;
+  border-radius: 999px;        /* round bubble */
   flex-shrink: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
 }
 
-/* Make the strokes inside the SVG nice and bold + white */
-#events h3.icon-heading .heading-icon * {
+/* Make the icon lines thick + white */
+#events h3.icon-heading svg.heading-icon path,
+#events h3.icon-heading svg.heading-icon polyline,
+#events h3.icon-heading svg.heading-icon rect,
+#events h3.icon-heading svg.heading-icon line,
+#events h3.icon-heading svg.heading-icon circle {
   stroke: #ffffff;
-  stroke-width: 2.4;    /* thicker lines */
+  stroke-width: 2.6;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* LEFT card bubble color (Recurring meetings) */
-#events .events-card--left h3.icon-heading .heading-icon {
-  background: #0b3754;  /* deep navy */
+/* LEFT card bubble color – deep navy */
+#events .events-card--left h3.icon-heading svg.heading-icon {
+  background: #0b3754;
 }
 
-/* RIGHT card bubble color (Upcoming dates) */
-#events .events-card--right h3.icon-heading .heading-icon {
-  background: var(--accent); /* your orange accent */
+/* RIGHT card bubble color – accent */
+#events .events-card--right h3.icon-heading svg.heading-icon {
+  background: var(--accent);
 }
 
-/* Tiny hover polish: brighten bubble a bit */
-#events .events-card--left h3.icon-heading .heading-icon:hover,
-#events .events-card--right h3.icon-heading .heading-icon:hover {
+/* Subtle hover brighten */
+#events .events-card--left h3.icon-heading svg.heading-icon:hover,
+#events .events-card--right h3.icon-heading svg.heading-icon:hover {
   filter: brightness(1.08);
 }
 
