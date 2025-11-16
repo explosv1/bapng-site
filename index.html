@@ -428,64 +428,56 @@
 ============================================ */
 
 /* H3 layout */
-* Layout of the H3 with icon */
+/* ============ EVENTS HEADING ROW ============ */
+
+/* H3 row: icon + text perfectly centered */
 #events h3.icon-heading {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  align-items: center;       /* vertical center for bubble + text */
+  gap: 0.6rem;               /* space between bubble and text */
   font-size: 1.15rem;
-  margin-bottom: 1rem;
   font-weight: 600;
+  margin: 0 0 1rem;          /* no top margin, only bottom */
+  padding: 0;
+  line-height: 1.3;          /* keeps text nicely balanced */
 }
 
-/* Bubble + SVG sizing – force override */
+/* Bubble + icon */
 #events h3.icon-heading svg.heading-icon {
-  width: 30px !important;      /* bigger icon */
-  height: 30px !important;
+  width: 26px;               /* slightly larger bubble */
+  height: 26px;
   padding: 7px;
-  border-radius: 999px;        /* round bubble */
+  border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
-}
-
-/* Make the icon lines thick + white */
-#events h3.icon-heading svg.heading-icon path,
-#events h3.icon-heading svg.heading-icon polyline,
-#events h3.icon-heading svg.heading-icon rect,
-#events h3.icon-heading svg.heading-icon line,
-#events h3.icon-heading svg.heading-icon circle {
-  stroke: #ffffff;
-  stroke-width: 2.6;
+  display: block;            /* removes baseline weirdness */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
-/* LEFT card bubble color – deep navy */
+/* LEFT card bubble color (navy) */
 #events .events-card--left h3.icon-heading svg.heading-icon {
   background: #0b3754;
 }
 
-/* RIGHT card bubble color – accent */
+/* RIGHT card bubble color (accent) */
 #events .events-card--right h3.icon-heading svg.heading-icon {
   background: var(--accent);
 }
-
 /* Subtle hover brighten */
 #events .events-card--left h3.icon-heading svg.heading-icon:hover,
 #events .events-card--right h3.icon-heading svg.heading-icon:hover {
   filter: brightness(1.08);
 }
 
-/* Make the icon shapes inside the SVG white */
-#events h3.icon-heading .heading-icon path,
-#events h3.icon-heading .heading-icon rect,
-#events h3.icon-heading .heading-icon circle,
-#events h3.icon-heading .heading-icon line,
-#events h3.icon-heading .heading-icon polyline {
-  fill: #ffffff;
+/* Icon strokes inside the bubble stay white */
+#events h3.icon-heading svg.heading-icon path,
+#events h3.icon-heading svg.heading-icon polyline,
+#events h3.icon-heading svg.heading-icon rect,
+#events h3.icon-heading svg.heading-icon line,
+#events h3.icon-heading svg.heading-icon circle {
   stroke: #ffffff;
-  stroke-width: 1.7;
+  stroke-width: 2;
+  fill: none;
 }
 
 /* Slight bubble brighten on hover */
@@ -874,10 +866,10 @@
       <div class="card events-card--left">
         <h3 class="icon-heading">
   <svg class="heading-icon" viewBox="0 0 24 24">
-  <polyline points="1 4 1 10 7 10"></polyline>
-  <polyline points="23 20 23 14 17 14"></polyline>
-  <path d="M3.51 15a9 9 0 0 0 14.63 3m2.35-4a9 9 0 0 0-14.63-3"></path>
-</svg>
+    <!-- circular arrow for "recurring" -->
+    <polyline points="4 4 4 9 9 9"></polyline>
+    <path d="M4 4a8 8 0 1 1-2 5"></path>
+  </svg>
   Recurring meetings
 </h3>
 
@@ -894,13 +886,16 @@
 
       <!-- Right Card -->
       <div class="card events-card--right lift-card">
-       <h3 class="icon-heading">
+      <h3 class="icon-heading">
   <svg class="heading-icon" viewBox="0 0 24 24">
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-  <line x1="16" y1="2" x2="16" y2="6"></line>
-  <line x1="8"  y1="2" x2="8"  y2="6"></line>
-  <line x1="3"  y1="10" x2="21" y2="10"></line>
-</svg>
+    <!-- calendar outline -->
+    <rect x="3" y="4" width="18" height="17" rx="2" ry="2"></rect>
+    <line x1="3" y1="9" x2="21" y2="9"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <!-- a simple date square inside -->
+    <rect x="8" y="12" width="4" height="4" rx="1"></rect>
+  </svg>
   Upcoming dates
 </h3>
 
