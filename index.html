@@ -588,12 +588,13 @@
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
   gap: 1.5rem;
-  align-items: flex-start;
+  a align-items: stretch;        /* was flex-start */
 }
 
 /* Re-use the general .card style, but allow extra breathing room here */
 #contact .contact-card {
   padding: 1.5rem 1.75rem;
+   height: 100%;                /* make each card fill the column height */
 }
 
 /* "Stay connected" heading above the right card */
@@ -953,7 +954,7 @@
     </div>
   </div>
 </section>
-!-- ====== Contact ====== -->
+<!-- ====== Contact ====== -->
 <section id="contact">
   <div class="container">
     <p class="subheading">Contact</p>
@@ -974,11 +975,7 @@
           </a>
         </p>
 
-        <p>
-          Not sure if it’s a fit? Reach out and we’ll gladly answer any questions about the group,
-          our meetings, or what to expect when you visit.
-        </p>
-      </div>
+        </div>
 
       <!-- RIGHT: Stay connected -->
       <div class="contact-right">
