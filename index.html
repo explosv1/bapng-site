@@ -457,9 +457,19 @@
   fill: none;
 }
 
-/* Left card bubble color (Recurring meetings) */
+/* Fix misalignment in the Recurring Meetings icon */
 #events .events-card--left h3.icon-heading svg.heading-icon {
-  background: #0b3754;     /* deep navy */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#events .events-card--left h3.icon-heading svg.heading-icon * {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Normalize centering inside the viewBox */
+#events .events-card--left h3.icon-heading svg.heading-icon {
+  viewBox: 0 0 24 24;
 }
 
 /* Right card bubble color (Upcoming dates) */
@@ -852,10 +862,9 @@
       <div class="card events-card--left">
         <h3 class="icon-heading">
   <svg class="heading-icon" viewBox="0 0 24 24">
-    <!-- circular arrow for "recurring" -->
-    <polyline points="4 4 4 9 9 9"></polyline>
-    <path d="M4 4a8 8 0 1 1-2 5"></path>
-  </svg>
+  <path d="M3 12a9 9 0 1 1 3 6.7" stroke-width="2" fill="none"/>
+  <polyline points="3 16 3 21 8 21" stroke-width="2" fill="none"/>
+</svg>
   Recurring meetings
 </h3>
 
