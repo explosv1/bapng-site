@@ -659,58 +659,7 @@
 
 #contact a[href^="mailto:"]:hover {
   color: var(--accent, #e67e22);
-}/* ============================================
-   CONTACT – MOBILE TWEAKS
-   ============================================ */
-@media (max-width: 768px) {
-
-  /* Stack the two cards instead of side-by-side */
-  #contact .two-column {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  /* Make both cards full-width on mobile */
-  #contact .contact-card,
-  #contact .social-card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Tighten padding a bit so they don't feel huge */
-  #contact .contact-card,
-  #contact .social-card {
-    padding: 1.25rem 1.4rem;
-  }
-
-  /* Align headings nicely and keep them same size */
-  #contact h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.85rem;
-  }
-
-  /* Slightly smaller body text for better fit */
-  #contact .contact-card p,
-  #contact .contact-card a,
-  #contact .social-card a {
-    font-size: 0.95rem;
-  }
-
-  /* Make the Facebook row left-aligned and roomy to tap */
-  #contact .social-card {
-    align-items: flex-start;
-  }
-
-  #contact .social-link {
-    justify-content: flex-start;
-    padding: 0.6rem 0.9rem;
-  }
-
-  #contact .social-link svg {
-    width: 22px;
-    height: 22px;
-  }
-}    
+}
   /* ================================
      Footer
   =================================== */
@@ -813,7 +762,58 @@
       font-size: 0.55rem;
       letter-spacing: 0.06rem;
     }
+  }/* ============================================
+   CONTACT – MOBILE TWEAKS
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Stack the two cards instead of side-by-side */
+  #contact .contact-layout {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 1.5rem;
+}
+
+  /* Make both cards full-width on mobile */
+  #contact .contact-card,
+  #contact .social-card {
+    width: 100%;
+    max-width: 100%;
   }
+
+  /* Tighten padding a bit so they don't feel huge */
+  #contact .contact-card,
+  #contact .social-card {
+    padding: 1.25rem 1.4rem;
+  }
+
+  /* Align headings nicely and keep them same size */
+  #contact h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Slightly smaller body text for better fit */
+  #contact .contact-card p,
+  #contact .contact-card a,
+  #contact .social-card a {
+    font-size: 0.95rem;
+  }
+
+  /* Make the Facebook row left-aligned and roomy to tap */
+  #contact .social-card {
+    align-items: flex-start;
+  }
+
+  #contact .social-link {
+    justify-content: flex-start;
+    padding: 0.6rem 0.9rem;
+  }
+
+  #contact .social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+}    
 </style>
 </head>
 <body>
