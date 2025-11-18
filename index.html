@@ -671,149 +671,140 @@
   }
 
   /* ================================
-     Responsive
-  =================================== */
-  @media (max-width: 768px) {
-    .hero-inner,
-    .two-column,
-    .contact-grid {
-      grid-template-columns: minmax(0, 1fr);
-    }
+   Responsive
+=================================== */
 
-    .hero {
-      padding-top: 2rem;
-    }
-
-    .hero h2 {
-      font-size: 1.6rem;
-    }
-
-    .hero-inner {
-      gap: 1.75rem;
-    }
-
-    .hero-card {
-      margin-top: 0.5rem;
-    }
-
-    .header-inner {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .logo-block {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .logo-block img {
-      height: 120px;
-    }
-
-    .header-text {
-      max-width: 100%;
-      margin: 0;
-      text-align: center;
-    }
-
-    .site-title {
-      font-size: 1.4rem;
-      line-height: 1.3;
-    }
-
-    .tagline {
-      font-size: 0.75rem;
-      letter-spacing: 0.14rem;
-    }
-
-    .main-nav ul {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      text-align: center;
-    }
+/* Tablet & small laptop */
+@media (max-width: 768px) {
+  /* Stack hero / about / events / contact columns */
+  .hero-inner,
+  .two-column {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  @media (max-width: 480px) {
-    .subtagline {
-      margin: 1rem 0 1.5rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.08rem;
-    }
+  .hero {
+    padding-top: 2rem;
+  }
 
-    .hero-actions a {
-      min-width: 140px;
-    }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
 
-    .hero-actions {
-      gap: 0.75rem;
-    }
+  .hero-inner {
+    gap: 1.75rem;
+  }
 
-    .site-title {
-      font-size: 1.2rem;
-      line-height: 1.25;
-    }
+  .hero-card {
+    margin-top: 0.5rem;
+  }
 
-    .tagline {
-      font-size: 0.55rem;
-      letter-spacing: 0.06rem;
-    }
-  }/* ============================================
-   CONTACT – MOBILE TWEAKS
-   ============================================ */
-@media (max-width: 768px) {
-
-  /* Stack the two cards instead of side-by-side */
-  #contact .contact-layout {
-    grid-template-columns: 1fr; /* stack vertically */
+  /* Header / logo / nav on mobile */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
-}
+  }
 
-  /* Make both cards full-width on mobile */
-  #contact .contact-card,
-  #contact .social-card {
+  .logo-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .logo-block img {
+    height: 120px;
+  }
+
+  .header-text {
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.14rem;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ===== CONTACT: stack + fit ===== */
+
+  /* Stack left/right columns */
+  #contact .contact-layout {
+    grid-template-columns: 1fr;   /* one column on mobile */
+    gap: 1.5rem;
+  }
+
+  /* Make cards full-width and a bit tighter */
+  #contact .contact-card {
     width: 100%;
     max-width: 100%;
-  }
-
-  /* Tighten padding a bit so they don't feel huge */
-  #contact .contact-card,
-  #contact .social-card {
     padding: 1.25rem 1.4rem;
   }
 
-  /* Align headings nicely and keep them same size */
-  #contact h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.85rem;
-  }
-
-  /* Slightly smaller body text for better fit */
+  /* Slightly smaller text inside cards */
   #contact .contact-card p,
   #contact .contact-card a,
-  #contact .social-card a {
+  #contact .social-link {
     font-size: 0.95rem;
   }
 
-  /* Make the Facebook row left-aligned and roomy to tap */
-  #contact .social-card {
-    align-items: flex-start;
-  }
-
+  /* Facebook row: left-aligned and tap-friendly */
   #contact .social-link {
     justify-content: flex-start;
     padding: 0.6rem 0.9rem;
   }
 
-  #contact .social-link svg {
+  #contact .social-icon {
     width: 22px;
     height: 22px;
   }
-}    
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .subtagline {
+    margin: 1rem 0 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .hero-actions a {
+    min-width: 140px;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+
+  .tagline {
+    font-size: 0.55rem;
+    letter-spacing: 0.06rem;
+  }
+
+  /* Contact cards a hint tighter on very small screens */
+  #contact .contact-card {
+    padding: 1.1rem 1.2rem;
+  }
+}
 </style>
 </head>
 <body>
